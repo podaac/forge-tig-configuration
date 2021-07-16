@@ -127,7 +127,7 @@ pipeline {
                 }
                 echo "Publishing Configurations to ${build_info.deploy_env} S3"
                 dir('terraform'){
-                    sh "bin/deploy.sh -v ${build_info.deploy_env}"
+                    sh "terraform init -reconfigure -input=false -backend-config=bucket=podaac-services-${tf_venue}-terraform -backend-config=profile=ngap-service-${tf_venue}"
                     sh "terraform output hitide-bucket-name"
                     script{
                         bucket_name = sh(returnStdout: true, script: "terraform output hitide-bucket-name").trim()
