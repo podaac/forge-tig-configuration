@@ -5,8 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 
+## [Unreleased] -
+
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 09-21-2020
+
+### Added
+
+- **PODAAC-3603**
+  - Added jenkins pipeline to deploy dataset config into hitide s3 bucket.
+
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 05-19-2020
+### Added
+
 - **PODAAC-3276**
   - Generated collection_name.cfg file through persistent-id.cfg
   - program ran against dataset-config-overrides project's production folder against L2SS TEST DB.  There are 14 files not able to find cross reference, Hence, not able to translate to their relative collection_name.cfg.  rename_cfg python code output as follow:
