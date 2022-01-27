@@ -8,10 +8,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] -
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
 
+## [Released] - 01-26-2022
+
+### Added
 - **PODAAC-4170**
   - Added palettes and sync to s3 bucket.
-  
+- **PODAAC-4171**
+  - Added conf for AVHRRMTA_G-NAVO-L2P-v1.0
+- **PODAAC-4173**
+  - Added conf for AVHRRMTB_G-NAVO-L2P-v1.0
 ### Changed
 ### Deprecated
 ### Removed
