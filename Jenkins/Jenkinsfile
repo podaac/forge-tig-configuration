@@ -134,6 +134,7 @@ pipeline {
                     }
                 }
                 sh("aws s3 sync ./config-files s3://${bucket_name}/dataset-configs --delete --profile ngap-service-${build_info.deploy_env} --metadata githash=${GIT_COMMIT_SHORT} --size-only")
+                sh("aws s3 sync ./palettes s3://${bucket_name}/palettes --delete --profile ngap-service-${build_info.deploy_env} --metadata githash=${GIT_COMMIT_SHORT} --size-only")
             }
         }
     }
