@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] -
 
 ### Added
+- **PODAAC-4024**
+  - Added conf for JASON-1_L2_OST_GPN_E            
+  - Added conf for JASON-1_L2_OST_GPR_E            
+  - Added conf for JASON-1_L2_OST_GPS_E            
+  - Added conf for MERGED_TP_J1_OSTM_OST_CYCLES_V42
 - **PODAAC-4189**
   - Added conf for AVHRRF_MA-STAR-L2P-v2.80
 - **PODAAC-4190**
