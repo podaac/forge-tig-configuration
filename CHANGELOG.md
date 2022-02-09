@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] -
 
 ### Added
+- **PODAAC-4189**
+  - Added conf for AVHRRF_MA-STAR-L2P-v2.80
+- **PODAAC-4190**
+  - Added conf for AVHRRF_MB-STAR-L2P-v2.80
+- **PODAAC-4191**
+  - Added conf for AVHRRF_MC-STAR-L2P-v2.80
 ### Changed
 ### Deprecated
 ### Removed
