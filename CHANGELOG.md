@@ -14,6 +14,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 02-09-2022
+
+### Added
+- ** PODAAC-4172 **
+  - Added conf for JASON_3_L2_OST_OGDR_GPS
+- **PODAAC-4024**
+  - Added conf for JASON-1_L2_OST_GPN_E            
+  - Added conf for JASON-1_L2_OST_GPR_E            
+  - Added conf for JASON-1_L2_OST_GPS_E            
+  - Added conf for MERGED_TP_J1_OSTM_OST_CYCLES_V42
+- **PODAAC-4189**
+  - Added conf for AVHRRF_MA-STAR-L2P-v2.80
+- **PODAAC-4190**
+  - Added conf for AVHRRF_MB-STAR-L2P-v2.80
+- **PODAAC-4191**
+  - Added conf for AVHRRF_MC-STAR-L2P-v2.80
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 01-26-2022
 
 ### Added
