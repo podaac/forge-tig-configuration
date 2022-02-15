@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] -
 
 ### Added
+- **PODAAC-4175**
+  - Added conf for SMAP_JPL_L2B_NRT_SSS_CAP_V5
 - ** PODAAC-4182 **
   - Added conf for  CYGNSS_L2_CDR_V1.1
 - ** PODAAC-4176 **
