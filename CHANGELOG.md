@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - ** PODAAC-4182 **
   - Added conf for  CYGNSS_L2_CDR_V1.1
+- ** PODAAC-4176 **
+  - Added conf for SMAP_JPL_L2B_SSS_CAP_V5
 ### Changed
 ### Deprecated
 ### Removed
