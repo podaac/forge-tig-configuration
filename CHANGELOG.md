@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] -
 
 ### Added
+- ** PODAAC-4182 **
+  - Added conf for  CYGNSS_L2_CDR_V1.1
 ### Changed
 ### Deprecated
 ### Removed
