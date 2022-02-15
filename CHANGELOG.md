@@ -5,9 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] -
+## [Unreleased]
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 02-15-2022
+
+### Added
+- **PODAAC-4175**
+  - Added conf for SMAP_JPL_L2B_NRT_SSS_CAP_V5
+- **PODAAC-4182**
+  - Added conf for  CYGNSS_L2_CDR_V1.1
+- **PODAAC-4176**
+  - Added conf for SMAP_JPL_L2B_SSS_CAP_V5
 ### Changed
 ### Deprecated
 ### Removed
