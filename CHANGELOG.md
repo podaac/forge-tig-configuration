@@ -14,6 +14,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+
+## [Released] - 03-17-2022
+
+### Added
+- ** PODAAC-4184 **
+  - Added conf for CYGNSS_L2_SURFACE_FLUX_CDR_V1.1
+- ** PODAAC-4185 **
+  - Added conf for CYGNSS_L2_V3.0
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 02-15-2022
 
 ### Added
