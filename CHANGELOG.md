@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+- ** PODAAC-4182 **
+  - Removed `mean_square_slope` and `wind_speed_uncertainty` from CYGNSS_L2_CDR_V1.1 image variables
 ### Deprecated
 ### Removed
 ### Fixed
