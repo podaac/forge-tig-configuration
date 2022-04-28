@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ** PODAAC-4201 **
  - Added conf for AQUARIUS_L2_SSS_CAP_V5
 - ** PODAAC-4418 **
-  - Added conf for CYGNSS_L1_V2.1.cfg
+  - Added conf for CYGNSS_L1_V2.1
+  - Added conf for CYGNSS_L1_CDR_V1.1
 ### Changed
 ### Deprecated
 ### Removed
