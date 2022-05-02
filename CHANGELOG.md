@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2022-05-02
+
+### Added
 - ** PODAAC-4201 **
   - Added conf for AQUARIUS_L2_SSS_CAP_V5
 - ** PODAAC-4418 **
