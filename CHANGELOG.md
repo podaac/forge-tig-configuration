@@ -17,9 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released] - 2022-05-02
 
 ### Added
-- ** PODAAC-4201 **
+- **PODAAC-4201**
   - Added conf for AQUARIUS_L2_SSS_CAP_V5
-- ** PODAAC-4418 **
+- **PODAAC-4418**
   - Added conf for CYGNSS_L1_V2.1
   - Added conf for CYGNSS_L1_CDR_V1.1
 - **PODAAC-4193**
@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
-- ** PODAAC-4182 **
+- **PODAAC-4182**
   - Removed `mean_square_slope` and `wind_speed_uncertainty` from CYGNSS_L2_CDR_V1.1 image variables
 ### Deprecated
 ### Removed
@@ -44,9 +44,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released] - 03-17-2022
 
 ### Added
-- ** PODAAC-4184 **
+- **PODAAC-4184**
   - Added conf for CYGNSS_L2_SURFACE_FLUX_CDR_V1.1
-- ** PODAAC-4185 **
+- **PODAAC-4185**
   - Added conf for CYGNSS_L2_V3.0
 ### Changed
 ### Deprecated
@@ -72,7 +72,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released] - 02-09-2022
 
 ### Added
-- ** PODAAC-4172 **
+- **PODAAC-4172**
   - Added conf for JASON_3_L2_OST_OGDR_GPS
 - **PODAAC-4024**
   - Added conf for JASON-1_L2_OST_GPN_E            
