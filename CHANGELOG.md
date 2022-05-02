@@ -9,10 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - ** PODAAC-4201 **
- - Added conf for AQUARIUS_L2_SSS_CAP_V5
+  - Added conf for AQUARIUS_L2_SSS_CAP_V5
 - ** PODAAC-4418 **
   - Added conf for CYGNSS_L1_V2.1
   - Added conf for CYGNSS_L1_CDR_V1.1
+- **PODAAC-4193**
+  - Added conf SWOT_SIMULATED_L2_KARIN_SSH_ECCO_LLC4320_CALVAL_V1
 ### Changed
 ### Deprecated
 ### Removed
