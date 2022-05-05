@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **PODAAC-4192**
+  - Added conf SWOT_SIMULATED_L2_KARIN_SSH_ECCO_LLC4320_SCIENCE_V1
 ### Changed
 ### Deprecated
 ### Removed
