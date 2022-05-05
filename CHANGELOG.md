@@ -14,6 +14,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2022-05-05
+
+### Added
+- **PODAAC-4192**
+  - Added conf SWOT_SIMULATED_L2_KARIN_SSH_ECCO_LLC4320_SCIENCE_V1
+- **PODAAC-4419**
+  - Added conf for CYGNSS_NOAA_L2_SWSP_25KM_V1.2
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2022-05-02
 
 ### Added
