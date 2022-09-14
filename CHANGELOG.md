@@ -8,9 +8,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
+## [Released] - 2022-09-13
+
+### Added
 - ** PODAAC-4201 **
  - Added conf for AQUARIUS_L2_SSS_CAP_V5
+- ** PODAAC-4421 **
+ - Added conf for CYGNSS_L2_SURFACE_FLUX_V2.0
+- ** PODAAC-4194 **
+ - Added conf for SWOT_SIMULATED_L2_NADIR_SSH_ECCO_LLC4320_CALVAL_V1
+- ** PODAAC-4195 **
+ - Added conf for SWOT_SIMULATED_L2_NADIR_SSH_ECCO_LLC4320_SCIENCE_V1
+- ** PODAAC-4785 **
+ - Added conf for SWOT_SIMULATED_L2_NADIR_SSH_GLORYS_SCIENCE_V1
+- ** PODAAC-4786 **
+ - Added conf for SWOT_SIMULATED_L2_NADIR_SSH_GLORYS_CALVAL_V1
+- ** PODAAC-4787 **
+ - Added conf for SWOT_SIMULATED_L2_KARIN_SSH_GLORYS_CALVAL_V1
+- ** PODAAC-4788 **
+ - Added conf for SWOT_SIMULATED_L2_KARIN_SSH_GLORYS_SCIENCE_V1
 ### Changed
+- ** PODAAC-4192 **
+ - Updated image variables and resolution for SWOT_SIMULATED_L2_KARIN_SSH_ECCO_LLC4320_SCIENCE_V1
+- ** PODAAC-4193 **
+ - Updated image variables and resolution for SWOT_SIMULATED_L2_KARIN_SSH_ECCO_LLC4320_CALVAL_V1
+- ** PODAAC-3668 **
+ - Removed fixed-footprint config for CYGNSS L2 datasets
 ### Deprecated
 ### Removed
 ### Fixed
