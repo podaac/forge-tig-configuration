@@ -15,6 +15,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 
+## [Released] - 2022-11-02
+
+### Added
+- ** PODAAC-5016
+ - Added conf for SMAP_RSS_L2_SSS_V5
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2022-09-13
 
 ### Added
