@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- ** PODAAC-4880 **
+ - Add conf for Sentinal 6 datasets
 ### Changed
 ### Deprecated
 ### Removed
@@ -18,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released] - 2022-11-02
 
 ### Added
-- ** PODAAC-5016
+- ** PODAAC-5016 **
  - Added conf for SMAP_RSS_L2_SSS_V5
 ### Changed
 ### Deprecated
