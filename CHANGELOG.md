@@ -15,6 +15,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 
+## [Released] - 2023-1-31
+
+### Added
+- ** PODAAC-5223 **
+ - Add conf for AMSR2-REMSS-L2P-v8.2 and AMSR2-REMSS-L2P_RT-v8.2
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2022-11-10
 
 ### Added
