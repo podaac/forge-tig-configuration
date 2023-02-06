@@ -26,6 +26,11 @@ jobs:
         with:
           python-version: 3.8
 
+      ## Describe workspace
+      - name: Describe Workspace
+        run: ls -al
+
+
       ## Update build-info yaml file for pre-alpha
       - name: Pre Alpha
         if: ${{ startsWith(github.ref, 'refs/heads/feature/') }} ||
