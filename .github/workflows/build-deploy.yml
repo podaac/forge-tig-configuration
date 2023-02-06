@@ -30,8 +30,9 @@ jobs:
       - name: Describe Workspace
         run: |
           echo "---" >build-info.yaml;
-          echo "  build_environment 'the_env'" >>build-info.yaml; 
+          echo "  build_environment: \"the_env\"" >>build-info.yaml; 
           ls -al
+          cat build-info.yaml
 
 
       ## Update build-info yaml file for pre-alpha
