@@ -28,7 +28,7 @@ jobs:
 
       ## Describe workspace
       - name: Describe Workspace
-        run: ls -al
+        run: touch build-info.yaml; ls -al
 
 
       ## Update build-info yaml file for pre-alpha
