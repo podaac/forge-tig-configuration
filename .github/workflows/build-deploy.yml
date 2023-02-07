@@ -40,7 +40,7 @@ jobs:
             ${{ contains(github.base_ref, 'develop') }}
         uses: fjogeleit/yaml-update-action@main
         env:
-          deploy_env: sit
+          deploy_environment: sit
         with:
           valueFile: 'build-info.yaml'
           propertyPath: 'deploy_env'
@@ -52,7 +52,7 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/heads/develop/') }}
         uses: fjogeleit/yaml-update-action@main
         env:
-          deploy_env: sit
+          deploy_environment: sit
         with:
           valueFile: 'build-info.yaml'
           propertyPath: 'deploy_env'
@@ -64,7 +64,7 @@ jobs:
         if: ${{ contains(github.base_ref, 'master') }}
         uses: fjogeleit/yaml-update-action@main
         env:
-          deploy_env: uat
+          deploy_environment: uat
         with:
           valueFile: 'build-info.yaml'
           propertyPath: 'deploy_env'
@@ -75,6 +75,8 @@ jobs:
       - name: Release
         if: ${{ startsWith(github.ref, 'refs/heads/master/') }}
         uses: fjogeleit/yaml-update-action@main
+        env:
+          deploy_environment: ops
         with:
           valueFile: 'build-info.yaml'
           propertyPath: 'deploy_env'
