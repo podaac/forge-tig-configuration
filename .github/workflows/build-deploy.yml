@@ -34,58 +34,49 @@ jobs:
           ls -al
           cat build-info.yaml
 
+
+
+
       ## Update build-info yaml file for pre-alpha
       - name: Pre Alpha
         if: ${{ startsWith(github.ref, 'refs/heads/feature/') }} ||
             ${{ contains(github.base_ref, 'develop') }}
-        uses: fjogeleit/yaml-update-action@main
-        env:
-          deploy_environment: sit
-        with:
-          valueFile: 'build-info.yaml'
-          propertyPath: 'deploy_env'
-          value: 'sit'
-          commitChange: false
+        run: echo "::set-env name=TARGET_ENV::sit"
 
       ## Update build-info yaml file for alpha
       - name: Alpha
         if: ${{ startsWith(github.ref, 'refs/heads/develop/') }}
-        uses: fjogeleit/yaml-update-action@main
-        env:
-          deploy_environment: sit
-        with:
-          valueFile: 'build-info.yaml'
-          propertyPath: 'deploy_env'
-          value: 'sit'
-          commitChange: false
+        run: echo "::set-env name=TARGET_ENV::sit"
 
       ## Update build-info yaml file for release candidates
       - name: Release Candidate
         if: ${{ contains(github.base_ref, 'master') }}
-        uses: fjogeleit/yaml-update-action@main
-        env:
-          deploy_environment: uat
-        with:
-          valueFile: 'build-info.yaml'
-          propertyPath: 'deploy_env'
-          value: 'uat'
-          commitChange: false
+        run: echo "::set-env name=TARGET_ENV::uat"
 
       ## Update build-info yaml file for release
       - name: Release
         if: ${{ startsWith(github.ref, 'refs/heads/master/') }}
+        run: echo "::set-env name=TARGET_ENV::ops"
+
+      ## Update build-info yaml file for release
+      - name: Release
+        if: env.TARGET_ENV == 'sit' || 
+            env.TARGET_ENV == 'uat' || 
+            env.TARGET_ENV == 'ops'
         uses: fjogeleit/yaml-update-action@main
-        env:
-          deploy_environment: ops
         with:
           valueFile: 'build-info.yaml'
           propertyPath: 'deploy_env'
-          value: 'ops'
+          value: env.TARGET_ENV
           commitChange: false
 
-      ## Test Configuration file
-      - name: Display Configs
-        run: cat build-info.yaml
+
+
+      # ## Test Configuration file
+      # - name: Display Configs
+      #   run: | 
+      #     cat build-info.yaml
+      #     echo "::set-env name=TARGET_ENV::$( cat build-info.yaml.json | jq --compact-output )"
 
       ## Deployment
       - name: Read deploy env for configuration changes
