@@ -93,9 +93,11 @@ jobs:
             ONE_STRING: AWS_ACCESS_KEY_ID_SERVICES${{ uppercase(env.TARGET_ENV) }}
 #            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SERVICES_ }}
 #            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_SERVICES_ }}
-          ports:
-            - 80
-          volumes:
-            - /home/cm/.aws:/home/dockeruser/.aws:ro
-          options: --cpus 1
-          run: ls -al
+        run: ls -al
+          # ports:
+
+          #   - 80
+          # volumes:
+          #   - /home/cm/.aws:/home/dockeruser/.aws:ro
+          # options: --cpus 1
+          # run: ls -al
