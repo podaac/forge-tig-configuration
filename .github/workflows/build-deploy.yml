@@ -41,22 +41,30 @@ jobs:
       - name: Pre Alpha
         if: ${{ startsWith(github.ref, 'refs/heads/feature/') }} ||
             ${{ contains(github.base_ref, 'develop') }}
-        run: echo "::set-env name=TARGET_ENV::sit"
+        env: 
+          TARGET_ENV: 'sit'
+        run: echo "${{ env.TARGET_ENV }}"
 
       ## Update build-info yaml file for alpha
       - name: Alpha
         if: ${{ startsWith(github.ref, 'refs/heads/develop/') }}
-        run: echo "::set-env name=TARGET_ENV::sit"
+        env: 
+          TARGET_ENV: 'sit'
+        run: echo "${{ env.TARGET_ENV }}"
 
       ## Update build-info yaml file for release candidates
       - name: Release Candidate
         if: ${{ contains(github.base_ref, 'master') }}
-        run: echo "::set-env name=TARGET_ENV::uat"
+        env: 
+          TARGET_ENV: 'uat'
+        run: echo "${{ env.TARGET_ENV }}"
 
       ## Update build-info yaml file for release
       - name: Release
         if: ${{ startsWith(github.ref, 'refs/heads/master/') }}
-        run: echo "::set-env name=TARGET_ENV::ops"
+        env: 
+          TARGET_ENV: 'ops'
+        run: echo "${{ env.TARGET_ENV }}"
 
       ## Update build-info yaml file for release
       - name: Release
