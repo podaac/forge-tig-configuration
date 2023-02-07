@@ -16,8 +16,6 @@ env:
 jobs:
   # First job in the workflow installs and verifies the software
   build:
-    env:
-      TARGET_ENV: ''
     name: Build, Test, Deploy
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -43,30 +41,22 @@ jobs:
       - name: Pre Alpha
         if: ${{ startsWith(github.ref, 'refs/heads/feature/') }} ||
             ${{ contains(github.base_ref, 'develop') }}
-        env: 
-          TARGET_ENV: 'sit'
-        run: echo "${{ env.TARGET_ENV }}"
+        run: echo "TARGET_ENV=sit" >> $GITHUB_ENV
 
       ## Update build-info yaml file for alpha
       - name: Alpha
         if: ${{ startsWith(github.ref, 'refs/heads/develop/') }}
-        env: 
-          TARGET_ENV: 'sit'
-        run: echo "${{ env.TARGET_ENV }}"
+        run: echo "TARGET_ENV=sit" >> $GITHUB_ENV
 
       ## Update build-info yaml file for release candidates
       - name: Release Candidate
         if: ${{ contains(github.base_ref, 'master') }}
-        env: 
-          TARGET_ENV: 'uat'
-        run: echo "${{ env.TARGET_ENV }}"
+        run: echo "TARGET_ENV=uat" >> $GITHUB_ENV
 
       ## Update build-info yaml file for release
       - name: Release
         if: ${{ startsWith(github.ref, 'refs/heads/master/') }}
-        env: 
-          TARGET_ENV: 'ops'
-        run: echo "${{ env.TARGET_ENV }}"
+        run: echo "TARGET_ENV=ops" >> $GITHUB_ENV
 
       ## Update build-info yaml file for release
       - name: Release
@@ -77,7 +67,7 @@ jobs:
         with:
           valueFile: 'build-info.yaml'
           propertyPath: 'deploy_env'
-          value: env.TARGET_ENV
+          value: ${{ env.TARGET_ENV }}
           commitChange: false
 
 
@@ -90,7 +80,7 @@ jobs:
 
       ## Deployment
       - name: Read deploy env for configuration changes
-        run: echo "${{ env.deploy_env }}"
+        run: echo "${{ env.TARGET_ENV }}"
 
       # - name: Deploy
       #   if: ${{ startsWith(github.ref, 'refs/heads/develop/') }} ||
