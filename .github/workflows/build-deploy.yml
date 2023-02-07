@@ -86,13 +86,13 @@ jobs:
             ${{ contains(github.base_ref, 'master') }} ||
             ${{ startsWith(github.ref, 'refs/heads/master/') }}
         runs-on: ubuntu-latest
-        container:
-          image: ${{ env.ARTIFACTORY_DOCKER_REGISTRY }}/podaac/service/deploy-terraform-0.12.31
-          env:
-            NODE_ENV: devops1
-            ONE_STRING: AWS_ACCESS_KEY_ID_SERVICES${{ uppercase(env.TARGET_ENV) }}
+        env:
+          NODE_ENV: devops1
+          ONE_STRING: AWS_ACCESS_KEY_ID_SERVICES${{ uppercase(env.TARGET_ENV) }}
 #            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SERVICES_ }}
 #            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_SERVICES_ }}
+#         container:
+#           image: ${{ env.ARTIFACTORY_DOCKER_REGISTRY }}/podaac/service/deploy-terraform-0.12.31
         run: ls -al
           # ports:
 
