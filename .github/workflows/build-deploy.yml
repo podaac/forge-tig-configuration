@@ -98,3 +98,4 @@ jobs:
           volumes:
             - /home/cm/.aws:/home/dockeruser/.aws:ro
           options: --cpus 1
+          run: ls -al
