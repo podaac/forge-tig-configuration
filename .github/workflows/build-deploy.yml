@@ -34,12 +34,13 @@ jobs:
           ls -al
           cat build-info.yaml
 
-
       ## Update build-info yaml file for pre-alpha
       - name: Pre Alpha
         if: ${{ startsWith(github.ref, 'refs/heads/feature/') }} ||
             ${{ contains(github.base_ref, 'develop') }}
         uses: fjogeleit/yaml-update-action@main
+        env:
+          deploy_env: sit
         with:
           valueFile: 'build-info.yaml'
           propertyPath: 'deploy_env'
@@ -50,6 +51,8 @@ jobs:
       - name: Alpha
         if: ${{ startsWith(github.ref, 'refs/heads/develop/') }}
         uses: fjogeleit/yaml-update-action@main
+        env:
+          deploy_env: sit
         with:
           valueFile: 'build-info.yaml'
           propertyPath: 'deploy_env'
@@ -60,6 +63,8 @@ jobs:
       - name: Release Candidate
         if: ${{ contains(github.base_ref, 'master') }}
         uses: fjogeleit/yaml-update-action@main
+        env:
+          deploy_env: uat
         with:
           valueFile: 'build-info.yaml'
           propertyPath: 'deploy_env'
@@ -81,6 +86,9 @@ jobs:
         run: cat build-info.yaml
 
       ## Deployment
+      - name: Read deploy env for configuration changes
+        run: echo "${{ env.deploy_env }}"
+
       # - name: Deploy
       #   if: ${{ startsWith(github.ref, 'refs/heads/develop/') }} ||
       #       ${{ startsWith(github.ref, 'refs/heads/master/') }} ||
@@ -91,6 +99,8 @@ jobs:
       #     image: ${{ env.ARTIFACTORY_DOCKER_REGISTRY }}/podaac/service/deploy-terraform-0.12.31
       #     env:
       #       NODE_ENV: devops1
+      #       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       #     ports:
       #       - 80
       #     volumes:
