@@ -81,10 +81,10 @@ jobs:
       ## Deployment
 
       - name: Deploy
-        if: ${{ startsWith(github.ref, 'refs/heads/develop/') }} ||
-            ${{ startsWith(github.ref, 'refs/heads/master/') }} ||
-            ${{ contains(github.base_ref, 'master') }} ||
-            ${{ startsWith(github.ref, 'refs/heads/master/') }}
+        # if: ${{ startsWith(github.ref, 'refs/heads/develop/') }} ||
+        #     ${{ startsWith(github.ref, 'refs/heads/master/') }} ||
+        #     ${{ contains(github.base_ref, 'master') }} ||
+        #     ${{ startsWith(github.ref, 'refs/heads/master/') }}
         runs-on: ubuntu-latest
         env:
           NODE_ENV: devops1
