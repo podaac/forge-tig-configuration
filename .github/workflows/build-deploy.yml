@@ -87,7 +87,7 @@ jobs:
       - name: Deploy
         env:
           NODE_ENV: devops1
-          ONE_STRING: AWS_ACCESS_KEY_ID_SERVICES${{ uppercase(env.TARGET_ENV) }}
+          ONE_STRING: AWS_ACCESS_KEY_ID_SERVICES${{ env.TARGET_ENV }}
         run: ls -al
 
 
