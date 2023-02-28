@@ -108,7 +108,7 @@ jobs:
 #          volumes:
 #            - /home/cm/.aws:/home/dockeruser/.aws:ro
           options: --cpus 1
-          run: ls -al
+        run: ls -al
 
 
 #            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SERVICES_ }}
