@@ -106,7 +106,8 @@ jobs:
           terraform_wrapper: false
 
       - name: Deploy
-        run: ls -al
+        run: ls -al \
+             cat build-info.yaml
 
 
 #            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SERVICES_ }}
