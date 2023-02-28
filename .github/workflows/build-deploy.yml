@@ -106,11 +106,7 @@ jobs:
           terraform_wrapper: false
 
       - name: Deploy
-      - run: ls -al |
-             cat build-info.yaml |
-             cd terraform |
-             terraform init -reconfigure -input=false -backend-config=bucket=podaac-services-${{ env.TARGET_ENV }}-terraform \
-             terraform output hitide-bucket-name
+        run: ls -al ; cat build-info.yaml ; cd terraform ; terraform init -reconfigure -input=false -backend-config=bucket=podaac-services-${{ env.TARGET_ENV }}-terraform ; terraform output hitide-bucket-name
 
 
 #            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SERVICES_ }}
