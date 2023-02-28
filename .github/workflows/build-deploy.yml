@@ -101,7 +101,14 @@ jobs:
           NODE_ENV: devops1
           AWS_ACCESS_KEY_ID: ${{ secrets[format('AWS_ACCESS_KEY_ID_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets[format('AWS_SECRET_ACCESS_KEY_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }}
-        run: aws sts get-caller-identity
+        container:
+          image: ${{ env.ARTIFACTORY_DOCKER_REGISTRY }}/podaac/service/deploy-terraform-0.12.31
+          ports:
+            - 80
+#          volumes:
+#            - /home/cm/.aws:/home/dockeruser/.aws:ro
+          options: --cpus 1
+          run: ls -al
 
 
 #            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SERVICES_ }}
