@@ -106,7 +106,7 @@ jobs:
           terraform_wrapper: false
 
       - name: Deploy
-        run: ls -al |
+      - run: ls -al |
              cat build-info.yaml |
              cd terraform |
              terraform init -reconfigure -input=false -backend-config=bucket=podaac-services-${{ env.TARGET_ENV }}-terraform \
