@@ -106,7 +106,7 @@ jobs:
           terraform_wrapper: false
 
       - name: Deploy
-        run: ls -al \
+        run: ls -al |
              cat build-info.yaml
 
 
