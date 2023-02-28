@@ -23,7 +23,7 @@ jobs:
     container:
       env:
         ARTIFACTORY_DOCKER_REGISTRY: "cae-artifactory.jpl.nasa.gov:16003"
-      image: ${{ env.ARTIFACTORY_DOCKER_REGISTRY }}/podaac/service/deploy-terraform-0.12.31
+      image: ${{ ARTIFACTORY_DOCKER_REGISTRY }}/podaac/service/deploy-terraform-0.12.31
       ports:
         - 80
       options: --cpus 1
