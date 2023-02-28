@@ -21,7 +21,8 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: https://cae-artifactory.jpl.nasa.gov:16003/podaac/service/deploy-terraform-0.12.31
+      image: https://artifactory.jpl.nasa.gov:443/artifactory/docker-release-local/podaac/service/deploy-terraform-0.12.31
+      #image: https://cae-artifactory.jpl.nasa.gov:16003/podaac/service/deploy-terraform-0.12.31
       ports:
         - 80
       options: --cpus 1
