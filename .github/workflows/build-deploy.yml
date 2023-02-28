@@ -20,14 +20,6 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    container:
-      image: https://artifactory.jpl.nasa.gov:443/artifactory/docker-release-local/podaac/service/deploy-terraform-0.12.31
-      #image: https://cae-artifactory.jpl.nasa.gov:16003/podaac/service/deploy-terraform-0.12.31
-      ports:
-        - 80
-      options: --cpus 1
-
-
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -104,6 +96,12 @@ jobs:
           aws-region: us-west-2
           role-session-name: GitHubActions
       - run: aws sts get-caller-identity
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 0.12.31
+          terraform_wrapper: false
 
       - name: Deploy
         run: ls -al
