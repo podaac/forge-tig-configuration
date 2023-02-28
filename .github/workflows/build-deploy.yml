@@ -97,12 +97,12 @@ jobs:
       - run: aws sts get-caller-identity
 
       - name: Deploy
-        env:
-          NODE_ENV: devops1
-          AWS_ACCESS_KEY_ID: ${{ secrets[format('AWS_ACCESS_KEY_ID_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets[format('AWS_SECRET_ACCESS_KEY_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }}
         container:
           image: ${{ env.ARTIFACTORY_DOCKER_REGISTRY }}/podaac/service/deploy-terraform-0.12.31
+          env:
+            NODE_ENV: devops1
+            AWS_ACCESS_KEY_ID: ${{ secrets[format('AWS_ACCESS_KEY_ID_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets[format('AWS_SECRET_ACCESS_KEY_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }}
           ports:
             - 80
 #          volumes:
