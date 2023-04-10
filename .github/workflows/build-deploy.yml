@@ -26,65 +26,27 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.8
-
-      ## Describe workspace
-      - name: Describe Workspace
-        run: |
-          echo "---" >build-info.yaml;
-          echo "  build_environment: \"the_env\"" >>build-info.yaml; 
-          ls -al
-          cat build-info.yaml
-
-      ## Update build-info yaml file for pre-alpha
-      - name: Pre Alpha
-        if: ${{ startsWith(github.ref, 'refs/heads/feature/') }} ||
-            ${{ contains(github.base_ref, 'develop') }}
-        run: echo "TARGET_ENV=sit" >> $GITHUB_ENV|
-             echo "TARGET_ENV_UPPERCASE=SIT" >> $GITHUB_ENV
-
+          
       ## Update build-info yaml file for alpha
       - name: Alpha
-        if: ${{ startsWith(github.ref, 'refs/heads/develop/') }}
+        if: ${{ startsWith(github.ref, 'refs/heads/feature/') }} ||
+            ${{ startsWith(github.ref, 'refs/heads/develop/') }}
         run: echo "TARGET_ENV=sit" >> $GITHUB_ENV|
              echo "TARGET_ENV_UPPERCASE=SIT" >> $GITHUB_ENV
 
       ## Update build-info yaml file for release candidates
       - name: Release Candidate
-        if: ${{ contains(github.base_ref, 'master') }}
+        if: ${{ contains(github.base_ref, 'main') }}
         run: echo "TARGET_ENV=uat" >> $GITHUB_ENV|
              echo "TARGET_ENV_UPPERCASE=UAT" >> $GITHUB_ENV
 
       ## Update build-info yaml file for release
       - name: Release
-        if: ${{ startsWith(github.ref, 'refs/heads/master/') }}
+        if: ${{ startsWith(github.ref, 'refs/heads/main') }}
         run: echo "TARGET_ENV=ops" >> $GITHUB_ENV |
              echo "TARGET_ENV_UPPERCASE=OPS" >> $GITHUB_ENV
 
-      ## Update build-info yaml file for release
-      - name: Release
-        if: env.TARGET_ENV == 'sit' || 
-            env.TARGET_ENV == 'uat' || 
-            env.TARGET_ENV == 'ops'
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          valueFile: 'build-info.yaml'
-          propertyPath: 'deploy_env'
-          value: ${{ env.TARGET_ENV }}
-          commitChange: false
-
-
-      # ## Test Configuration file
-      # - name: Display Configs
-      #   run: | 
-      #     cat build-info.yaml
-      #     echo "::set-env name=TARGET_ENV::$( cat build-info.yaml.json | jq --compact-output )"
-
       ## Deployment
-
-        # if: ${{ startsWith(github.ref, 'refs/heads/develop/') }} ||
-        #     ${{ startsWith(github.ref, 'refs/heads/master/') }} ||
-        #     ${{ contains(github.base_ref, 'master') }} ||
-        #     ${{ startsWith(github.ref, 'refs/heads/master/') }}
       - name: Set AWS Env Variables
         run: echo "AWS_ACCESS_KEY_ID=${{ secrets[format('AWS_ACCESS_KEY_ID_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }}" >> $GITHUB_ENV |
              echo "AWS_SECRET_ACCESS_KEY=${{ secrets[format('AWS_SECRET_ACCESS_KEY_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }}" >> $GITHUB_ENV
@@ -99,25 +61,11 @@ jobs:
           role-session-name: GitHubActions
       - run: aws sts get-caller-identity
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 0.12.31
-          terraform_wrapper: false
-
-      - name: Deploy
-        run: ls -al ; cat build-info.yaml ; cd terraform ; terraform init -reconfigure -input=false -backend-config=bucket=podaac-services-${{ env.TARGET_ENV }}-terraform ; terraform output hitide-bucket-name
-
-
-#            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SERVICES_ }}
-#            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_SERVICES_ }}
-#         container:
-#           image: ${{ env.ARTIFACTORY_DOCKER_REGISTRY }}/podaac/service/deploy-terraform-0.12.31
-
-          # ports:
-
-          #   - 80
-          # volumes:
-          #   - /home/cm/.aws:/home/dockeruser/.aws:ro
-          # options: --cpus 1
-          # run: ls -al
+      - name: Sync S3
+        if: |
+          github.ref == 'refs/heads/develop' ||
+          github.ref == 'refs/heads/main'    ||
+          ${{ contains(github.base_ref, 'main') }}
+        run:           
+          aws s3 sync ./config-files s3://podaac-services-${{ env.TARGET_ENV}}-hitide/dataset-configs --delete --metadata githash=${GITHUB_SHA} --size-only;
+          aws s3 sync ./palettes s3://podaac-services-${{ env.TARGET_ENV}}-hitide/palettes --delete --metadata githash=${GITHUB_SHA} --size-only;
