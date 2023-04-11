@@ -65,7 +65,7 @@ jobs:
         if: |
           github.ref == 'refs/heads/develop' ||
           github.ref == 'refs/heads/main'    ||
-          ${{ contains(github.base_ref, 'main') }}
+          contains(github.base_ref, 'main')
         run:           
           aws s3 sync ./config-files s3://podaac-services-${{ env.TARGET_ENV}}-hitide/dataset-configs --delete --metadata githash=${GITHUB_SHA} --size-only;
           aws s3 sync ./palettes s3://podaac-services-${{ env.TARGET_ENV}}-hitide/palettes --delete --metadata githash=${GITHUB_SHA} --size-only;
