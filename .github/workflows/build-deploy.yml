@@ -4,7 +4,7 @@ name: Build
 on:
   # Triggers the workflow on push events
   push:
-    branches: [ develop, release/**, main, feature/**, issue/**, issues/**, dependabot/** ]
+    branches: [ develop, main, feature/**, issue/**, issues/**]
   
   pull_request:
     types:
@@ -33,20 +33,22 @@ jobs:
         with:
           python-version: 3.8
           
-      ## Update build-info yaml file for alpha
+      ## Update env for alpha
       - name: Alpha
-        if: ${{ startsWith(github.ref, 'refs/heads/feature/') }} ||
-            ${{ startsWith(github.ref, 'refs/heads/develop/') }}
+        if: ${{ startsWith(github.ref, 'refs/heads/feature/') }} || 
+            ${{ startsWith(github.ref, 'refs/heads/develop/') }} ||
+            ${{ startsWith(github.ref, 'refs/heads/issue/') }} ||
+            ${{ startsWith(github.ref, 'refs/heads/issues/') }}
         run: echo "TARGET_ENV=sit" >> $GITHUB_ENV|
              echo "TARGET_ENV_UPPERCASE=SIT" >> $GITHUB_ENV
 
-      ## Update build-info yaml file for release candidates
+      ## Update env for release candidates
       - name: Release Candidate
         if: ${{ contains(github.base_ref, 'main') }}
         run: echo "TARGET_ENV=uat" >> $GITHUB_ENV|
              echo "TARGET_ENV_UPPERCASE=UAT" >> $GITHUB_ENV
 
-      ## Update build-info yaml file for release
+      ## Update env for release
       - name: Release
         if: ${{ startsWith(github.ref, 'refs/heads/main') }}
         run: echo "TARGET_ENV=ops" >> $GITHUB_ENV |
@@ -71,7 +73,8 @@ jobs:
         if: |
           github.ref == 'refs/heads/develop' ||
           github.ref == 'refs/heads/main'    ||
-          contains(github.base_ref, 'main')
+          contains(github.base_ref, 'main') ||
+          ${{ github.event.head_commit.message }}  == "/github_actions deploy"
         run:           
           aws s3 sync ./config-files s3://podaac-services-${{ env.TARGET_ENV}}-hitide/dataset-configs --delete --metadata githash=${GITHUB_SHA} --size-only;
           aws s3 sync ./palettes s3://podaac-services-${{ env.TARGET_ENV}}-hitide/palettes --delete --metadata githash=${GITHUB_SHA} --size-only;
