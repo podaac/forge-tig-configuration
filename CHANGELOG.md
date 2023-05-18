@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2023-05-18
+
+### Added
+### Changed
 - **PODAAC-5547**
   - Changed AVHRR19_G-NAVO-L2P-v1.0 footpring strategy from periodic to polarsides 
 ### Deprecated
