@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+- **PODAAC-5547**
+  - Changed 
 ### Deprecated
 ### Removed
 ### Fixed
@@ -20,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - ** PODAAC-5132 **
  - Add conf for SWOT_L2_LR_SSH_UNSMOOTHED_1.0
-### Changed
+### Changed AVHRR19_G-NAVO-L2P-v1.0 footpring strategy from periodic to polarsides
 ### Deprecated
 ### Removed
 ### Fixed
