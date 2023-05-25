@@ -14,36 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
-## [Released] - 2023-05-25
-
-### Added
-### Changed
-- **PODAAC-5547**
-  - Changed AVHRR19_G-NAVO-L2P-v1.0 footprint strategy from periodic to polar
-### Deprecated
-### Removed
-### Fixed
-### Security
-
-
-## [Released] - 2023-05-08
-
-### Added
-- ** PODAAC-5132 **
- - Add conf for SWOT_L2_LR_SSH_UNSMOOTHED_1.0
-### Changed
-### Deprecated
-### Removed
-### Fixed
-### Security
-
 
 ## [Released] - 2023-05-25
 
 ### Added
 ### Changed
 - **PODAAC-5547**
-  - Changed AVHRR19_G-NAVO-L2P-v1.0 footpring strategy from periodic to polar 
+  - Changed AVHRR19_G-NAVO-L2P-v1.0 footprint strategy from polarsides to polar 
 ### Deprecated
 ### Removed
 ### Fixed
@@ -55,19 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 ### Changed
 - **PODAAC-5547**
-  - Changed AVHRR19_G-NAVO-L2P-v1.0 footpring strategy from periodic to polarsides 
-### Deprecated
-### Removed
-### Fixed
-### Security
-
-
-## [Released] - 2023-05-08
-
-### Added
-- ** PODAAC-5132 **
- - Add conf for SWOT_L2_LR_SSH_UNSMOOTHED_1.0
-### Changed
+  - Changed AVHRR19_G-NAVO-L2P-v1.0 footprint strategy from periodic to polarsides 
 ### Deprecated
 ### Removed
 ### Fixed
