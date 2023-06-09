@@ -15,6 +15,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 
+## [Released] - 2023-06-09
+
+### Added
+### Changed
+- **PODAAC-5542**
+  - Removed sample variable 'image' from CYGNSS_L2_V2.1
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2023-05-25
 
 ### Added
