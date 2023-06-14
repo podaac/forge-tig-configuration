@@ -14,6 +14,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2023-06-14
+
+### Added
+### Changed
+  - Removed swh_sea_state_bias from SWOT_L2_LR_SSH_EXPERT_1.0
+### Deprecated
+### Removed
+### Fixed
+### Security
 
 ## [Released] - 2023-06-09
 
