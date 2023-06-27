@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2023-06-27
+
+### Added
+### Changed
+  - Changed stratgy to swot_linstring for SWOT_L2_NALT_GDR_SSHA_1.0 SWOT_L2_NALT_IGDR_SSHA_1.0 SWOT_L2_NALT_OGDR_SSHA_1.0
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2023-06-14
 
 ### Added
