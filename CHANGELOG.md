@@ -15,6 +15,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 
+## [Released] - 2023-09-15
+
+### Added
+  - Add configs SWOT_L2_LR_SSH_BASIC_1.1, SWOT_L2_LR_SSH_EXPERT_1.1, SWOT_L2_LR_SSH_WINDWAVE_1.1
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2023-09-13
 
 ### Added
