@@ -15,6 +15,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 
+## [Released] - 2023-10-16
+
+### Added
+### Changed
+  - Added ssha_karin_2 to SWOT_L2_LR_SSH_EXPERT_1.0 and 1.1
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2023-09-15
 
 ### Added
