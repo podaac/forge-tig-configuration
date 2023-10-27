@@ -15,6 +15,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 
+## [Released] - 2023-10-27
+
+### Added
+  - Added configs SWOT_L2_NALT_IGDR_GDR_1.0, SWOT_L2_NALT_IGDR_SGDR_1.0, and SWOT_L2_NALT_OGDR_GDR_1.0
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2023-10-16
 
 ### Added
