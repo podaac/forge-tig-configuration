@@ -15,6 +15,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 
+## [Released] - 2023-11-15
+
+### Added
+  - Added configs SWOT_L2_LR_SSH_BASIC_2.0, SWOT_L2_LR_SSH_EXPERT_2.0, SWOT_L2_LR_SSH_UNSMOOTHED_2.0, SWOT_L2_LR_SSH_WINDWAVE_2.0
+  - Added configs SWOT_L2_NALT_IGDR_GDR_2.0, SWOT_L2_NALT_IGDR_SGDR_2.0, SWOT_L2_NALT_IGDR_SSHA_2.0
+  - Added configs SWOT_L2_NALT_OGDR_GDR_2.0, SWOT_L2_NALT_OGDR_SSHA_2.0
+  - Added configs SWOT_L2_NALT_GDR_SSHA_2.0
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2023-10-27
 
 ### Added
