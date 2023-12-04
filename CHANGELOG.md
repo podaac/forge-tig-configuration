@@ -15,6 +15,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2023-12-04
+
+### Added
+ - Added configs for SWOT_L2_HR_Raster_100m_2.0 SWOT_L2_HR_Raster_250m_2.0
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 
 ## [Released] - 2023-11-15
 
