@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
    SWOT_L2_NALT_IGDR_GDR_2.0, SWOT_L2_NALT_IGDR_SGDR_1.0, SWOT_L2_NALT_IGDR_SGDR_2.0,
    SWOT_L2_NALT_OGDR_1.0, SWOT_L2_NALT_OGDR_GDR_1.0, SWOT_L2_NALT_OGDR_GDR_2.0,
    SWOT_L2_LR_SSH_UNSMOOTHED_1.0, SWOT_L2_LR_SSH_UNSMOOTHED_2.0
+ - Removed footprints from SWOT_L2_SSH_BASIC_1.0/1.1/2.0, 
+   SWOT_L2_SSH_EXPERT_1.0/1.1/2.0,
+   SWOT_L2_SSH_WINDWAVE_1.0/1.1/2.0
 ### Fixed
 ### Security
 
