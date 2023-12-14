@@ -47,6 +47,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 
+## [Released] - 2023-11-06
+
+### Added
+  - Added config ASCATB_ESDR_L2_WIND_STRESS_V1.1
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2023-10-27
 
 ### Added
