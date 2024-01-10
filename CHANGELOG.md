@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
- - Added configs for SWOT_L2_NALT_GDR_2.0, SWOT_L2_NALT_GDR_GDR_2.0, SWOT_L2_NALT_GDR_SGDR_2.0, SWOT_L2_NALT_GDR_SSHA_2.0
+ - Added configs for SWOT_L2_NALT_GDR_2.0, SWOT_L2_NALT_GDR_GDR_2.0, SWOT_L2_NALT_GDR_SGDR_2.0, SWOT_L2_NALT_GDR_SSHA_2.0 + SWOT_L2_NALT_IGDR_SGDR_2.0.cfg, SWOT_L2_NALT_IGDR_GDR_2.0.cfg, SWOT_L2_NALT_OGDR_GDR_2.0.cfg
 ### Changed
 ### Deprecated
 ### Removed
