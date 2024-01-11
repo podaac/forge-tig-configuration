@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+ - Added configs for SWOT_L2_RAD_GDR_2.0, SWOT_L2_RAD_IGDR_2.0, SWOT_L2_RAD_OGDR_2.0
 ### Changed
 ### Deprecated
 ### Removed
