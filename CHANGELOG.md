@@ -14,10 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
-## [Released] - 2024-1-11
+## [Released] - 2024-01-11
 
 ### Added
- - Added configs for SWOT_L2_NALT_GDR_2.0, SWOT_L2_NALT_GDR_GDR_2.0, SWOT_L2_NALT_GDR_SGDR_2.0, SWOT_L2_NALT_GDR_SSHA_2.0 + SWOT_L2_NALT_IGDR_SGDR_2.0.cfg, SWOT_L2_NALT_IGDR_GDR_2.0.cfg, SWOT_L2_NALT_OGDR_GDR_2.0.cfg
+ - Added configs for SWOT_L2_NALT_GDR_2.0, SWOT_L2_NALT_GDR_GDR_2.0, SWOT_L2_NALT_GDR_SGDR_2.0,
+   SWOT_L2_NALT_GDR_SSHA_2.0, SWOT_L2_NALT_IGDR_SGDR_2.0.cfg, SWOT_L2_NALT_IGDR_GDR_2.0.cfg, SWOT_L2_NALT_OGDR_GDR_2.0.cfg
+ - Added configs for SWOT_L2_RAD_GDR_2.0, SWOT_L2_RAD_IGDR_2.0, SWOT_L2_RAD_OGDR_2.0
 ### Changed
 ### Deprecated
 ### Removed
