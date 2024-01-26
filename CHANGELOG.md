@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2024-01-25
+
+### Added
+ - Added config for ASCATA_ESDR_L2_WIND_STRESS_V1.1
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-01-11
 
 ### Added
