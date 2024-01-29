@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+ - Updated Ascat 25km collection to have fill in missing pixels
 ### Changed
 ### Deprecated
 ### Removed
