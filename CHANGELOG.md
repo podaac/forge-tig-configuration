@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
  - Updated Ascat 25km collection to have fill in missing pixels
  - Remove high resolution settings for ssha karin 2 in swot expert collections
+ - Added config for ASCATA_ESDR_L2_WIND_STRESS_V1.1
 ### Changed
 ### Deprecated
 ### Removed
