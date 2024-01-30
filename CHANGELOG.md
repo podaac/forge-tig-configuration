@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+ - Added config for ASCATA_ESDR_L2_WIND_STRESS_V1.1
 ### Changed
 ### Deprecated
 ### Removed
@@ -17,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released] - 2024-01-25
 
 ### Added
- - Added config for ASCATA_ESDR_L2_WIND_STRESS_V1.1
+ - Added config for ASCATB_ESDR_L2_WIND_STRESS_V1.1
 ### Changed
 ### Deprecated
 ### Removed
