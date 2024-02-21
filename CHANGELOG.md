@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2024-02-20
+
+### Added
+ - Added add a global_grid variable to allow tig to use an entire grid region -90 90 -180 180 to generate images to fix swot 2.0 alignment
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-01-30
 
 ### Added
