@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Add new deploy workflow to deploy to all env when merge to main
 ### Changed
 ### Deprecated
 ### Removed
