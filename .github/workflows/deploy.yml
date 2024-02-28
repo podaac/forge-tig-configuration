@@ -1,0 +1,37 @@
+# This is the main build pipeline that verifies and publishes the software
+name: Build
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events
+  push:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # First job in the workflow installs and verifies the software
+  deploy_sit:
+    name: Deploy SIT
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      ## Deployment
+      - name: Configure AWS credentials 
+        uses: aws-actions/configure-aws-credentials@v4
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SERVICES_SIT }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_SERVICES_SIT }}
+        with:
+          aws-region: us-west-2
+          role-session-name: GitHubActions
+      - run: aws sts get-caller-identity
+
+      - name: Sync S3
+        run:           
+          aws s3 sync ./config-files s3://podaac-services-sit-hitide/dataset-configs --delete --metadata githash=${GITHUB_SHA}
+          aws s3 sync ./palettes s3://podaac-services-sit-hitide/palettes --delete --metadata githash=${GITHUB_SHA}
