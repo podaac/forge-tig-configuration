@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2024-02-29
+
+### Added
+- Added configs for CYGNSS_L2_V3.2 and SMAP_RSS_L2_SSS_V6
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-02-28
 
 ### Added
