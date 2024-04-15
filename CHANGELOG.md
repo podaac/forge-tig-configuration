@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2024-04-15
+
+### Added
+- Added config for VIIRS_N21-NAVO-L2P-v3.0
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-02-29
 
 ### Added
