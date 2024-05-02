@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2024-05-02
+
+### Added
+### Changed
+- Added image variable and image entries for SCATSAT1_ESDR_L2_WIND_STRESS_V1.1 config.
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-04-15
 
 ### Added
