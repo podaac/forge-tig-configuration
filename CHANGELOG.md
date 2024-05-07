@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2024-05-06
+
+### Added
+- Config files for ASCATA_ESDR_ANCILLARY_L2_V1.1 and ASCATB_ESDR_ANCILLARY_L2_V1.1
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-05-02
 
 ### Added
