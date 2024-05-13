@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2024-05-13
+
+### Added
+- Config files for MERGED_TP_J1_OSTM_OST_CYCLES_V52.cfg
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-05-06
 
 ### Added
