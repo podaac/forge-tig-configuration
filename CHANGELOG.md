@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2024-05-13
+
+### Added
+- Add hitide palette for all colormaps available in matplotlib
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-05-06
 
 ### Added
