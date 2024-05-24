@@ -15,6 +15,77 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [Released] - 2024-05-13
+
+### Added
+- Config files for MERGED_TP_J1_OSTM_OST_CYCLES_V52
+- Add hitide palette for all colormaps available in matplotlib
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-05-06
+
+### Added
+- Config files for ASCATA_ESDR_ANCILLARY_L2_V1.1 and ASCATB_ESDR_ANCILLARY_L2_V1.1
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-05-02
+
+### Added
+### Changed
+- Added image variable and image entries for SCATSAT1_ESDR_L2_WIND_STRESS_V1.1 config.
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-04-15
+
+### Added
+### Changed
+- Updated config for VIIRS_N21-NAVO-L2P-v3.0 (new min/max's)
+- Updated config for VIIRS_N20-NAVO-L2P-v3.0 (new min/max's)
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+### Added
+- Added config for VIIRS_N21-NAVO-L2P-v3.0
+- Added config for VIIRS_N20-NAVO-L2P-v3.0
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-02-29
+
+### Added
+- Added configs for CYGNSS_L2_V3.2 and SMAP_RSS_L2_SSS_V6
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-02-28
+
+### Added
+- Add new deploy workflow to deploy to all env when merge to main
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-02-20
 
 ### Added
