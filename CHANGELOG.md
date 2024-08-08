@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Released] - 2024-08-08
+
+### Added
+### Changed
+- Reformatted all configs with "pretty" function to make more readable
+### Deprecated
+### Removed
+- Removed "variables" field from all configs.  No longer used by HiTIDE (uses CMR to get variable list instead)
+### Fixed
+### Security
+
 ## [Released] - 2024-05-24
 
 ### Added
