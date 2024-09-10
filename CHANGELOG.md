@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
-- Update prim_smap_l2_v1
+- Updated PRIM_SMAP_L2_V1
 ### Deprecated
 ### Removed
 ### Fixed
