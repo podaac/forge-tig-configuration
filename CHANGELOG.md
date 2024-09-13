@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
-- Updated SMAP_RSS_L2_SSS_V6
+- Updated SMAP_RSS_L2_SSS_V5 and SMAP_RSS_L2_SSS_V6
 ### Deprecated
 ### Removed
 ### Fixed
