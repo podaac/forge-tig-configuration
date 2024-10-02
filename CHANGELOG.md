@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Released] - 2024-10-02
+
+### Added
+### Changed
+- Added COWVR_STPH8_L1_TSDR_V10.0
+- Added COWVR_STPH8_L2_EDR_V10.0
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-9-13
 
 ### Added
