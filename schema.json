@@ -98,12 +98,12 @@
             "simplify": {
               "type": "number",
               "minimum": 0,
-              "description": "Simplification tolerance for contours, optional."
+              "description": "Simplification tolerance for a polygon, optional."
             },
             "min_area": {
               "type": "integer",
               "minimum": 0,
-              "description": "Minimum area for a valid footprint, optional."
+              "description": "Minimum area for a polygon or it will be removed, optional."
             },
             "fill_kernel": {
               "type": "array",
@@ -170,12 +170,12 @@
             "simplify": {
               "type": "number",
               "minimum": 0,
-              "description": "Simplification tolerance for contours, optional."
+              "description": "Simplification tolerance for a polygon, optional."
             },
             "min_area": {
               "type": "number",
               "minimum": 0,
-              "description": "Minimum area for a valid footprint, optional."
+              "description": "Minimum area for a polygon or it will be removed, optional."
             },
             "fill_value": {
               "type": "number",
@@ -261,7 +261,7 @@
             "description": "List of legend files."
           }
         },
-        "required": ["id", "min", "max"],
+        "required": ["id", "min", "max", "palette"],
         "additionalProperties": false,
         "description": "Properties of an image variable."
       },
