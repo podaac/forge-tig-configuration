@@ -2,7 +2,7 @@
 
 ## Overview
 
-HiTide Configuration Generator is a Python CLI tool that generates and validates configuration files for HiTide from Excel spreadsheets. It provides a flexible and type-safe way to create configuration settings for data processing and visualization workflows.
+HiTide Configuration Generator is a Python CLI tool that generates and validates configuration files for HiTide from Excel spreadsheets. It provides a flexible and type-safe way to create configuration settings for generating footprint and thumbnails.
 
 ## Features
 
