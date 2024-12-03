@@ -70,6 +70,11 @@ Your Excel file should contain three sheets:
 - **forge-py**: Configuration for footprint strategy and processing parameters
 - **tig**: List of image variables for processing
 
+#### How to use example speadsheet
+
+- Fill in data for each sheet, leave empty if the field doesn't apply.
+- Documentation for forge-py configurations https://github.com/podaac/forge-py
+
 ## Configuration Generation Process
 
 1. Reads specified Excel file
