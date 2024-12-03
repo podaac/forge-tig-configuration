@@ -1,30 +1,27 @@
 import os
 import json
 import pytest
+from functools import lru_cache
 from jsonschema import validate, ValidationError
+from podaac.forge_tig_configuration import new_generate_config
 
-# Directory containing the configuration files
-CONFIG_DIR = 'config-files'
+@lru_cache(maxsize=1)
+def get_schema():
+    """Cache schema loading for performance."""
+    return new_generate_config.HiTideConfigGenerator.load_schema()
 
-# Load the schema once
-with open("schema.json", "r") as schema_file:
-    SCHEMA = json.load(schema_file)
+def validate_config(config_file):
+    """Validate single configuration file."""
+    with open(config_file, "r") as f:
+        config = json.load(f)
+    validate(instance=config, schema=get_schema())
 
-# Parameterize the test with all `.cfg` files in CONFIG_DIR
 @pytest.mark.parametrize("config_file", [
-    os.path.join(CONFIG_DIR, f) for f in os.listdir(CONFIG_DIR) if f.endswith('.cfg')
+    os.path.join('config-files', f) for f in os.listdir('config-files') if f.endswith('.cfg')
 ])
 def test_json_schema(config_file):
-    """Test JSON configuration files against the schema."""
-    # Load the JSON config
+    """Validate JSON configurations against schema."""
     try:
-        with open(config_file, "r") as f:
-            config = json.load(f)
-    except json.JSONDecodeError as e:
-        pytest.fail(f"Failed to load JSON from {config_file}: {e}")
-
-    # Validate the JSON against the schema
-    try:
-        validate(instance=config, schema=SCHEMA)
-    except ValidationError as e:
+        validate_config(config_file)
+    except (json.JSONDecodeError, ValidationError) as e:
         pytest.fail(f"Validation failed for {config_file}: {e}")

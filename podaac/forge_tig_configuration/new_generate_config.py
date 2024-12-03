@@ -1,104 +1,108 @@
 import pandas as pd
-from pprint import pprint
 import click
+import json
+import os
+import numpy as np
+from jsonschema import validate
+from typing import Dict, Any, Optional
 
-# Define fixed spreadsheet names
-REQUIRED_SETTINGS_SHEET = "required-settings"
-FORGE_PY_SHEET = "forge-py"
-TIG_SHEET = "tig"
+class HiTideConfigGenerator:
+    REQUIRED_SETTINGS_SHEET = "required-settings"
+    FORGE_PY_SHEET = "forge-py"
+    TIG_SHEET = "tig"
 
-def read_excel_sheet_as_dict(file_path, sheet_name):
-    """
-    Reads an Excel sheet and converts the first row into a dictionary,
-    using headers as keys and the first row as values. Excludes empty values.
+    @staticmethod
+    def _convert_value(value: Any) -> Any:
+        """Convert non-standard types to JSON-serializable types."""
+        if pd.isna(value):
+            return None
+        if isinstance(value, (pd.Timestamp, np.datetime64)):
+            return str(value)
+        if isinstance(value, (np.bool_, bool)):
+            return bool(value)
+        if isinstance(value, (np.integer, int)):
+            return int(value)
+        if isinstance(value, (np.floating, float)):
+            return float(value)
+        return value
 
-    Args:
-        file_path (str): Path to the Excel file.
-        sheet_name (str): Name of the sheet to read.
-
-    Returns:
-        dict: A dictionary with header-value pairs.
-    """
-    try:
-        df = pd.read_excel(file_path, sheet_name=sheet_name, engine='openpyxl')
-        if df.empty:
-            print(f"Error: The sheet '{sheet_name}' has no data rows.")
+    @classmethod
+    def read_sheet_as_dict(cls, file_path: str, sheet_name: str) -> Optional[Dict[str, Any]]:
+        """Read Excel sheet and convert to dictionary with type-safe conversion."""
+        try:
+            df = pd.read_excel(file_path, sheet_name=sheet_name, engine='openpyxl')
+            if df.empty:
+                raise ValueError(f"Sheet '{sheet_name}' is empty")
+            
+            first_row = df.iloc[0]
+            return {k: cls._convert_value(v) for k, v in first_row.items() if pd.notna(v)}
+        except Exception as e:
+            click.echo(f"Error reading {sheet_name}: {e}", err=True)
             return None
 
-        # Use the header as keys and the first row as values
-        first_row = df.iloc[0]
-        return {key: value for key, value in first_row.items() if pd.notna(value)}
-    except Exception as e:
-        print(f"Error reading sheet '{sheet_name}': {e}")
-        return None
+    @classmethod
+    def read_sheet_as_list(cls, file_path: str, sheet_name: str) -> Optional[Dict[str, Any]]:
+        """Read sheet as list of non-empty dictionaries."""
+        try:
+            df = pd.read_excel(file_path, sheet_name=sheet_name, engine='openpyxl')
+            df.dropna(how='all', inplace=True)
+            return {'imgVariables': [
+                {k: cls._convert_value(v) for k, v in row.items() if pd.notna(v) and v != ""}
+                for row in df.to_dict(orient="records")
+            ]}
+        except Exception as e:
+            click.echo(f"Error reading {sheet_name}: {e}", err=True)
+            return None
 
-def file_to_dict_list(file_path, sheet_name):
-    """
-    Reads a sheet and converts it into a list of dictionaries, where each dictionary
-    represents a row with headers as keys and row values as values. Excludes empty values.
+    @classmethod
+    def generate_configuration(cls, file_path: str) -> Optional[Dict[str, Any]]:
+        """Generate configuration from Excel file."""
+        # Load required data
+        required_settings = cls.read_sheet_as_dict(file_path, cls.REQUIRED_SETTINGS_SHEET)
+        forge_py = cls.read_sheet_as_dict(file_path, cls.FORGE_PY_SHEET)
+        tig_data = cls.read_sheet_as_list(file_path, cls.TIG_SHEET)
 
-    Args:
-        file_path (str): Path to the file.
-        sheet_name (str): Name of the Excel sheet to read.
+        if not all([required_settings, forge_py, tig_data]):
+            return None
 
-    Returns:
-        dict: A dictionary with the list of row dictionaries.
-    """
-    try:
-        df = pd.read_excel(file_path, sheet_name=sheet_name, engine='openpyxl')
-        df.dropna(how='all', inplace=True)  # Drop rows with all empty values
-        return {'imgVariables': [
-            {k: v for k, v in row.items() if pd.notna(v) and v != ""}
-            for row in df.to_dict(orient="records")
-        ]}
-    except Exception as e:
-        print(f"Error reading sheet '{sheet_name}': {e}")
-        return None
+        # Construct strategy configuration
+        strategy = forge_py.get("strategy")
+        strategy_args = {k: v for k, v in forge_py.items() if k != "strategy"}
+        strategy_dict = {"footprint": {"strategy": strategy, strategy: strategy_args}}
 
-def generate_configuration(file_path):
-    """
-    Generates a configuration dictionary from the Excel file.
+        # Default settings
+        defaults = {
+            'tiles': {'steps': [30, 14]},
+            'image': {'ppd': 8, 'res': 8}
+        }
 
-    Args:
-        file_path (str): Path to the Excel file.
+        # Merge configurations
+        return {**required_settings, **strategy_dict, **tig_data, **defaults}
 
-    Returns:
-        dict: The generated configuration.
-    """
-    # Read required sheets
-    required_settings = read_excel_sheet_as_dict(file_path, REQUIRED_SETTINGS_SHEET)
-    forge_py = read_excel_sheet_as_dict(file_path, FORGE_PY_SHEET)
-    tig_data = file_to_dict_list(file_path, TIG_SHEET)
-
-    if not required_settings or not forge_py:
-        print("Error: Missing required settings or forge-py data.")
-        return None
-
-    # Build strategy dictionary
-    strategy = forge_py.get("strategy")
-    filtered_args = {k: v for k, v in forge_py.items() if k != "strategy"}
-    strategy_dict = {"footprint": {"strategy": strategy, strategy: filtered_args}}
-
-    # Merge everything
-    merged_config = required_settings | strategy_dict | tig_data
-    return merged_config
-
+    @staticmethod
+    def load_schema() -> Dict[str, Any]:
+        """Load JSON schema for validation."""
+        schema_path = os.path.join(os.path.dirname(__file__), "schema.json")
+        with open(schema_path, "r") as file:
+            return json.load(file)
 
 @click.command()
-@click.option('-g', '--granule', help='Sample granule file', required=True)
-def generate_hitide_config_command(granule):
-    """Command call to generate config"""
+@click.option('-f', '--file', help='Excel file with configuration settings', required=True)
+def generate_hitide_config(file: str):
+    """Generate and validate HiTide configuration."""
+    generator = HiTideConfigGenerator()
+    config = generator.generate_configuration(file)
+    
+    if not config:
+        click.echo("Configuration generation failed.", err=True)
+        return
 
-    generate_hitide_config(granule, dataset_id, include_image_variables, longitude, latitude, time, footprint_strategy)
+    try:
+        schema = generator.load_schema()
+        validate(instance=config, schema=schema)
+        click.echo(json.dumps(config, indent=2))
+    except Exception as e:
+        click.echo(f"Validation error: {e}", err=True)
 
 if __name__ == '__main__':
-    #generate_hitide_config_command()  # pylint: disable=no-value-for-parameter
-
-
-    # Example usage
-    file_path = "/Users/simonl/Desktop/work/podaac/forge-tig-configuration/podaac/forge_tig_configuration/example_config.xlsx"
-    config = generate_configuration(file_path)
-
-
-    if config:
-        pprint(config)
+    generate_hitide_config()
