@@ -24,6 +24,7 @@ jobs:
       - name: Install Software
         run: |
           poetry build
+          poetry install
 
       - name: Run pytest
         run: poetry run pytest
