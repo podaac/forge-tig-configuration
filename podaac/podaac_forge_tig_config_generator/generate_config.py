@@ -1,3 +1,5 @@
+"""script used to generate forge tig configuration"""
+
 import ast
 import json
 import os
@@ -7,7 +9,10 @@ import numpy as np
 import pandas as pd
 from jsonschema import validate
 
+
 class HiTideConfigGenerator:
+    """Class to generate configurations"""
+
     REQUIRED_SETTINGS_SHEET = "required-settings"
     FORGE_PY_SHEET = "forge-py"
     TIG_SHEET = "tig"
@@ -126,6 +131,7 @@ class HiTideConfigGenerator:
         with open(schema_path, "r") as file:
             return json.load(file)
 
+
 @click.command()
 @click.option('-f', '--file', help='Excel file with configuration settings', required=True)
 def generate_hitide_config(file: str):
@@ -148,6 +154,7 @@ def generate_hitide_config(file: str):
 
     except Exception as e:
         click.echo(f"Validation error: {e}", err=True)
+
 
 if __name__ == '__main__':
     generate_hitide_config()

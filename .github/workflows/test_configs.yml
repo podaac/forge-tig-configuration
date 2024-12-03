@@ -26,5 +26,8 @@ jobs:
           poetry build
           poetry install
 
-      - name: Run pytest
-        run: poetry run pytest
+      - name: Run Tests
+        run:|
+          poetry run flake8 podaac
+          poetry run pylint podaac
+          poetry run pytest

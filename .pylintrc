@@ -1,0 +1,20 @@
+[MASTER]
+# List of directories to ignore (relative to the current directory).
+ignore=tests
+
+[MESSAGES CONTROL]
+# Disable the following messages by symbolic name or ID.
+disable=line-too-long,           # C0301: Line too long
+        broad-exception-caught,  # W0718: Catching too general exception Exception
+        unspecified-encoding,    # W1514: Using open without explicitly specifying an encoding
+        redefined-argument-from-local, # R1704: Redefining argument with a local name
+        no-value-for-parameter   # E1120: No value for argument in function call
+
+[FORMAT]
+# Maximum allowed line length (optional override if you want to enforce a slightly longer limit).
+max-line-length=120
+
+[REPORTS]
+# Disable the output of the report summary.
+reports=no
+
