@@ -33,7 +33,7 @@ jobs:
           poetry install
 
       - name: Run Tests
-        run:|
+        run: |
           poetry run flake8 podaac
           poetry run pylint podaac
           poetry run pytest
