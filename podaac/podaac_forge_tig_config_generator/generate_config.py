@@ -80,7 +80,7 @@ class HiTideConfigGenerator:
         # Default settings
         defaults = {
             'tiles': {'steps': [30, 14]},
-            'image': {'ppd': 8, 'res': 8},
+            'image': {'ppd': 4, 'res': 8},
             'footprinter': 'forge-py'
         }
 
