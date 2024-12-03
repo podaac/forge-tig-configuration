@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "forge-tig-configuration"
+name = "podaac-forge-tig-config-generator"
 version = "0.1.0"
 description = ""
 authors = ["Simon Liu <simon.liu@jpl.nasa.gov>"]
