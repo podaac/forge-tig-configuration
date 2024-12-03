@@ -1,11 +1,11 @@
-import pandas as pd
-import click
+import ast
 import json
 import os
-import numpy as np
-from jsonschema import validate, Draft7Validator
 from typing import Dict, Any, Optional
-import ast 
+import click
+import numpy as np
+import pandas as pd
+from jsonschema import validate
 
 class HiTideConfigGenerator:
     REQUIRED_SETTINGS_SHEET = "required-settings"
@@ -42,7 +42,7 @@ class HiTideConfigGenerator:
                                 filtered_obj[key] = filtered_value
                         elif prop_schema.get('type') == 'array' and isinstance(value, list):
                             filtered_obj[key] = [
-                                recursive_filter(item, prop_schema.get('items', {})) 
+                                recursive_filter(item, prop_schema.get('items', {}))
                                 for item in value if item
                             ]
                         else:
@@ -98,7 +98,7 @@ class HiTideConfigGenerator:
             df = pd.read_excel(file_path, sheet_name=sheet_name, engine='openpyxl')
             if df.empty:
                 raise ValueError(f"Sheet '{sheet_name}' is empty")
-            
+
             first_row = df.iloc[0]
             return {k: cls._convert_value(v) for k, v in first_row.items() if pd.notna(v)}
         except Exception as e:
@@ -132,7 +132,7 @@ def generate_hitide_config(file: str):
     """Generate and validate HiTide configuration."""
     generator = HiTideConfigGenerator()
     config = generator.generate_configuration(file)
-    
+
     if not config:
         click.echo("Configuration generation failed.", err=True)
         return
@@ -141,6 +141,11 @@ def generate_hitide_config(file: str):
         schema = generator.load_schema()
         validate(instance=config, schema=schema)
         click.echo(json.dumps(config, indent=2))
+        short_name = config.get('shortName')
+        file = f"{short_name}.cfg"
+        with open(file, 'w') as file:
+            json.dump(config, file, indent=4)
+
     except Exception as e:
         click.echo(f"Validation error: {e}", err=True)
 

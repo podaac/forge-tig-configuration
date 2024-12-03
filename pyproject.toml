@@ -20,3 +20,6 @@ click = "^8.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+generate_config = 'podaac.podaac_forge_tig_config_generator.generate_config:generate_hitide_config'
