@@ -3,12 +3,12 @@ import json
 import pytest
 from functools import lru_cache
 from jsonschema import validate, ValidationError
-from podaac.forge_tig_configuration import new_generate_config
+from podaac.podaac_forge_tig_config_generator import generate_config
 
 @lru_cache(maxsize=1)
 def get_schema():
     """Cache schema loading for performance."""
-    return new_generate_config.HiTideConfigGenerator.load_schema()
+    return generate_config.HiTideConfigGenerator.load_schema()
 
 def validate_config(config_file):
     """Validate single configuration file."""
