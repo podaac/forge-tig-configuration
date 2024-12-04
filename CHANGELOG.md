@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Released] - 2024-12-04
+
+### Added
+ - Added Schema validations
+ - Added a new forge tig configuration generator
+ - Added in test to validate json structure and schema validate the configurations
+ - Update configurations for new forge-py
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-11-25
 
 ### Added
