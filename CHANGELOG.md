@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Released] - 2024-12-04
+
+### Added
+ - Added Schema validations
+ - Added a new forge tig configuration generator
+ - Added in test to validate json structure and schema validate the configurations
+ - Update configurations for new forge-py
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-11-25
+
+### Added
+ - Added config for EWSG2-NAVO-L2P-v01
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [Released] - 2024-10-02
 
 ### Added
@@ -533,6 +556,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released] - 05-19-2020
 ### Added
+
+## [Released] - 2024-08-28
+
+### Added
+ - Added config for CYGNSS_L2_SURFACE_FLUX_V3.2 
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
 
 - **PODAAC-3276**
   - Generated collection_name.cfg file through persistent-id.cfg
