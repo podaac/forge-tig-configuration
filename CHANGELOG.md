@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released] - 2024-12-11
 
 ### Added
- - Added config for <NASA_SSH_REF_ALONGTRACK_V1>
+ - Added config for NASA_SSH_REF_ALONGTRACK_V1
 ### Changed
 ### Deprecated
 ### Removed
