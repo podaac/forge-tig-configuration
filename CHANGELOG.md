@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - Added Schema validations
  - Added a new forge tig configuration generator
  - Added in test to validate json structure and schema validate the configurations
- - Update configurations for new forge-py
+ - Updated configurations for new forge-py
 ### Changed
 ### Deprecated
 ### Removed
