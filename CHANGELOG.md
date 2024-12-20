@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
  - Added config for NASA_SSH_REF_ALONGTRACK_V1
+
+## [Released] - 2024-12-04
+
+### Added
+ - Added Schema validations
+ - Added a new forge tig configuration generator
+ - Added in test to validate json structure and schema validate the configurations
+ - Updated configurations for new forge-py
 ### Changed
 ### Deprecated
 ### Removed

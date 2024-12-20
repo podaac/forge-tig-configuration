@@ -1,0 +1,10 @@
+[flake8]
+# Ignore specific warnings or errors.
+ignore = E501
+
+# Optionally, increase the max line length (if you prefer to set a limit instead of ignoring entirely).
+max-line-length = 120
+
+# Exclude specific files or directories.
+exclude = tests/, docs/, .venv/
+
