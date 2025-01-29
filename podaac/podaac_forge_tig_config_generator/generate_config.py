@@ -148,9 +148,9 @@ def generate_hitide_config(file: str):
         validate(instance=config, schema=schema)
         click.echo(json.dumps(config, indent=2))
         short_name = config.get('shortName')
-        file = f"{short_name}.cfg"
-        with open(file, 'w') as file:
-            json.dump(config, file, indent=4)
+        file_name = f"{short_name}.cfg"
+        with open(file_name, 'w') as open_file:
+            json.dump(config, open_file, indent=4)
 
     except Exception as e:
         click.echo(f"Validation error: {e}", err=True)
