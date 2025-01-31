@@ -27,7 +27,6 @@ config_generator = HiTideConfigGenerator(
     lon_var="longitude",
     is360=False,
     time_var="time",
-    global_grid=True,
     footprinter="forge-py",
     strategy="open_cv",
     opencv_params={
@@ -109,7 +108,6 @@ The generated configuration includes:
     "lonVar": "longitude",
     "is360": false,
     "timeVar": "time",
-    "global_grid": true,
     "footprinter": "forge-py",
     "footprint": {
         "strategy": "open_cv",
