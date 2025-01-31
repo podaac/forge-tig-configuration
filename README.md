@@ -1,127 +1,124 @@
-# HiTide Configuration Generator
+# HiTideConfigGenerator
 
 ## Overview
-
-HiTide Configuration Generator is a Python CLI tool that generates and validates configuration files for HiTide from Excel spreadsheets. It provides a flexible and type-safe way to create configuration settings for generating footprint and thumbnails.
+`HiTideConfigGenerator` is a Python class designed to generate configuration objects adhering to a specified JSON schema. It allows users to specify key parameters for HiTIDE processing and validates the generated configuration against a schema before saving it as a JSON file.
 
 ## Features
-
-- Generate configuration from Excel spreadsheets
-- Type-safe value conversion
-- JSON schema validation
-- Flexible configuration generation
-- CLI interface for easy use
-
-## Prerequisites
-
-- Python 3.10+
-- Poetry
-- pip
+- Generate structured configuration objects for HiTIDE processing.
+- Supports optional parameters for customization.
+- Validates configuration against a predefined JSON schema.
+- Saves the configuration to a JSON file.
 
 ## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/podaac/forge-tig-configuration.git
-cd forge-tig-configuration
-```
-
-2. Install Poetry (if not already installed):
-```bash
-pip install poetry
-```
-
-3. Install project dependencies:
-```bash
-poetry install
+Ensure you have the required dependencies installed:
+```sh
+pip install jsonschema
 ```
 
 ## Usage
 
-### Activating the Virtual Environment
+### Creating a Configuration Generator Instance
+```python
+from hitide_config_generator import HiTideConfigGenerator
 
-To activate the Poetry virtual environment:
-```bash
-poetry shell
+config_generator = HiTideConfigGenerator(
+    short_name="example_dataset",
+    lat_var="latitude",
+    lon_var="longitude",
+    is360=False,
+    time_var="time",
+    tiles={"x": 10, "y": 10},
+    global_grid=True,
+    footprinter="forge-py",
+    tolerance=0.01,
+    strategy="opencv",
+    opencv_params={"blur": 5, "threshold": 127},
+    alpha_shape_params={"alpha": 0.5},
+    img_variables=["var1", "var2"],
+    image={"ppd": 8, "res": 16}
+)
 ```
 
-### CLI Command
-
-```bash
-generate_config -f <path_to_excel_file>
+### Generating and Saving the Configuration
+```python
+config = config_generator.generate()
+print(config)  # Outputs the generated configuration
 ```
+This method:
+1. Generates a configuration dictionary.
+2. Validates the configuration against a predefined schema.
+3. Saves the configuration as a JSON file named `<short_name>.cfg`.
 
-#### Command Options
+## Methods
 
-- `-f, --file`: **[Required]** Path to the Excel file containing configuration settings
-- `-h, --help`: Show help message
+### `generate() -> dict`
+Generates a configuration object adhering to the specified schema.
 
-### Excel File Structure
+- **Returns**: `dict` - The generated configuration.
+- **Raises**: `Exception` if validation fails.
 
-Your Excel file should contain three sheets:
+## Configuration Schema
+The generated configuration includes:
+- **Required Fields**:
+  - `shortName` (str): Dataset short name.
+  - `latVar` (str): Latitude variable name.
+  - `lonVar` (str): Longitude variable name.
+  - `is360` (bool): Whether longitude is in 0-360 format.
+- **Optional Fields**:
+  - `timeVar` (str): Time variable name.
+  - `tiles` (dict): Grid tiling configuration.
+  - `global_grid` (bool): Indicates if global grid is used.
+  - `footprinter` (str): Footprint generation method.
+  - `tolerance` (float): Processing tolerance.
+  - `footprint` (dict): Includes footprinting strategies (OpenCV, Alpha Shape, etc.).
+  - `imgVariables` (list of dict): List of image-related variables.
+  - `image` (dict): Image configuration, defaults to `{"ppd": 4, "res": 8}`.
 
-1. `required-settings`: Global configuration settings
-2. `forge-py`: Strategy and processing configurations
-3. `tig`: Image generation variables
-
-#### Example Excel Sheets
-
-- **required-settings**: Contains key-value pairs for global settings
-- **forge-py**: Configuration for footprint strategy and processing parameters
-- **tig**: List of image variables for processing
-
-#### How to use example speadsheet
-
-- Fill in data for each sheet, leave empty if the field doesn't apply.
-- Documentation for forge-py configurations https://github.com/podaac/forge-py
-
-## Configuration Generation Process
-
-1. Reads specified Excel file
-2. Converts data types safely
-3. Merges configurations from different sheets
-4. Applies JSON schema validation
-5. Generates a configuration file named after the `shortName`
-
-## Output
-
-- Prints JSON configuration to console
-- Generates a `.cfg` file named after the `shortName`
-
-## Error Handling
-
-- Validates input against JSON schema
-- Provides detailed error messages for configuration issues
-- Handles type conversions and edge cases
-
-## Development
-
-### Running Tests
-
-```bash
-poetry run pytest tests/
+## Example Output
+```json
+{
+    "shortName": "example_dataset",
+    "latVar": "latitude",
+    "lonVar": "longitude",
+    "is360": false,
+    "timeVar": "time",
+    "footprinter": "forge-py",
+    "footprint": {
+        "strategy": "open_cv",
+]        "open_cv": {
+           "pixel_height": 1000,
+           "simplify":0.3,
+           "min_area": 30,
+           "fill_value": -99999.0,
+           "fill_kernel": [30,30]
+        },
+        "alpha_shape": {
+           "alpha":0.2,
+           "thinning": {"method": "bin_avg", "value": [0.5, 0.5]},
+           "cutoff_lat": 80,
+           "smooth_poles": [78,80],
+           "simplify" : 0.3,
+           "min_area": 30,
+           "fill_value": -99999.0
+        }
+      }    },
+    "imgVariables": [
+        {
+            "id": "sses_bias",
+            "min": "-18.85",
+            "max": "19.25",
+            "palette": "paletteMedspirationIndexed"
+        },
+        {
+            "id": "sses_standard_deviation",
+            "min": "-18.85",
+            "max": "19.25",
+            "palette": "paletteMedspirationIndexed"
+        }
+    ]
+}
 ```
-
-### Adding Dependencies
-
-To add a new project dependency:
-```bash
-poetry add <package-name>
-```
-
-To add a development dependency:
-```bash
-poetry add --group dev <package-name>
-```
-
-### Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## License
+This project is licensed under the MIT License.
 
-Distributed under the Apatche License. See `LICENSE` for more information.
