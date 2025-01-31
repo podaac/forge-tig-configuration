@@ -142,7 +142,7 @@ jobs:
         if: |
           github.ref == 'refs/heads/develop' ||
           github.ref == 'refs/heads/main' ||
-          startsWith(github.ref, 'refs/heads/release/')
+          startsWith(github.ref, 'refs/heads/release/') ||
           github.event.head_commit.message == '/deploy'
         id: check_publish
         run: |
