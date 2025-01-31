@@ -97,8 +97,6 @@ class HiTideConfigGenerator:
         except Exception as e:
             raise Exception(f"Validation error: {e}")
 
-        print(json.dumps(config, indent=4))
-
         # Specify the file path where you want to save the JSON data
         file_path = f"{self.short_name}.cfg"
 
