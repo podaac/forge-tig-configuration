@@ -50,7 +50,8 @@ jobs:
           
           # Version calculation based on branch
           if [[ "${{ github.ref }}" =~ ^refs/heads/(issue|feature|dependabot)/ ]]; then
-            new_version="${base_version%%-*}+$(git rev-parse --short HEAD)"
+            TIMESTAMP=$(date -u +'%Y%m%d%H%M%S')
+            new_version="${base_version%%-*}.dev${TIMESTAMP}"
           elif [[ "${{ github.ref }}" == "refs/heads/develop" ]]; then
             new_version=$(poetry version prerelease -s)
           elif [[ "${{ github.ref }}" =~ ^refs/heads/release/ ]]; then
@@ -123,7 +124,8 @@ jobs:
         if: |
           github.ref == 'refs/heads/develop' ||
           github.ref == 'refs/heads/main' ||
-          startsWith(github.ref, 'refs/heads/release/')
+          startsWith(github.ref, 'refs/heads/release/') ||
+          github.event.head_commit.message == '/deploy'
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
           POETRY_PYPI_TOKEN_TESTPYPI: ${{ secrets.TEST_PYPI_API_TOKEN }}
@@ -141,6 +143,7 @@ jobs:
           github.ref == 'refs/heads/develop' ||
           github.ref == 'refs/heads/main' ||
           startsWith(github.ref, 'refs/heads/release/')
+          github.event.head_commit.message == '/deploy'
         id: check_publish
         run: |
           pip install tenacity logging 
