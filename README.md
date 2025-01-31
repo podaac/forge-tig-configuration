@@ -10,9 +10,8 @@
 - Saves the configuration to a JSON file.
 
 ## Installation
-Ensure you have the required dependencies installed:
 ```sh
-pip install jsonschema
+pip install podaac-forge-tig-config-generator
 ```
 
 ## Usage
