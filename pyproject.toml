@@ -3,7 +3,7 @@ name = "podaac-forge-tig-config-generator"
 version = "0.1.0a1"
 authors = ["Simon Liu <simon.liu@jpl.nasa.gov>"]
 readme = "README.md"
-description = "Tool to generate podaac forge and tig configurations)"
+description = "Tool to generate podaac forge and tig configurations"
 
 packages = [
     { include = "podaac" },
