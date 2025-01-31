@@ -18,7 +18,8 @@ pip install podaac-forge-tig-config-generator
 
 ### Creating a Configuration Generator Instance
 ```python
-from hitide_config_generator import HiTideConfigGenerator
+from podaac.podaac_forge_tig_config_generator.generate_config import HiTideConfigGenerator
+import json
 
 config_generator = HiTideConfigGenerator(
     short_name="example_dataset",
@@ -26,16 +27,43 @@ config_generator = HiTideConfigGenerator(
     lon_var="longitude",
     is360=False,
     time_var="time",
-    tiles={"x": 10, "y": 10},
     global_grid=True,
     footprinter="forge-py",
-    tolerance=0.01,
-    strategy="opencv",
-    opencv_params={"blur": 5, "threshold": 127},
-    alpha_shape_params={"alpha": 0.5},
-    img_variables=["var1", "var2"],
+    strategy="open_cv",
+    opencv_params={
+       "pixel_height": 1000,
+       "simplify":0.3,
+       "min_area": 30,
+       "fill_value": -99999.0,
+       "fill_kernel": [30,30]
+    },
+    alpha_shape_params={
+       "alpha":0.2,
+       "thinning": {"method": "bin_avg", "value": [0.5, 0.5]},
+       "cutoff_lat": 80,
+       "smooth_poles": [78,80],
+       "simplify" : 0.3,
+       "min_area": 30,
+       "fill_value": -99999.0
+    },
+    img_variables=[
+        {
+            "id": "sses_bias",
+            "min": "-18.85",
+            "max": "19.25",
+            "palette": "paletteMedspirationIndexed"
+        },
+        {
+            "id": "sses_standard_deviation",
+            "min": "-18.85",
+            "max": "19.25",
+            "palette": "paletteMedspirationIndexed"
+        }
+    ],
     image={"ppd": 8, "res": 16}
 )
+config = config_generator.generate()
+print(json.dumps(config, indent=4))
 ```
 
 ### Generating and Saving the Configuration
@@ -81,26 +109,39 @@ The generated configuration includes:
     "lonVar": "longitude",
     "is360": false,
     "timeVar": "time",
+    "global_grid": true,
     "footprinter": "forge-py",
     "footprint": {
         "strategy": "open_cv",
-]        "open_cv": {
-           "pixel_height": 1000,
-           "simplify":0.3,
-           "min_area": 30,
-           "fill_value": -99999.0,
-           "fill_kernel": [30,30]
+        "open_cv": {
+            "pixel_height": 1000,
+            "simplify": 0.3,
+            "min_area": 30,
+            "fill_value": -99999.0,
+            "fill_kernel": [
+                30,
+                30
+            ]
         },
         "alpha_shape": {
-           "alpha":0.2,
-           "thinning": {"method": "bin_avg", "value": [0.5, 0.5]},
-           "cutoff_lat": 80,
-           "smooth_poles": [78,80],
-           "simplify" : 0.3,
-           "min_area": 30,
-           "fill_value": -99999.0
+            "alpha": 0.2,
+            "thinning": {
+                "method": "bin_avg",
+                "value": [
+                    0.5,
+                    0.5
+                ]
+            },
+            "cutoff_lat": 80,
+            "smooth_poles": [
+                78,
+                80
+            ],
+            "simplify": 0.3,
+            "min_area": 30,
+            "fill_value": -99999.0
         }
-      }    },
+    },
     "imgVariables": [
         {
             "id": "sses_bias",
@@ -114,7 +155,11 @@ The generated configuration includes:
             "max": "19.25",
             "palette": "paletteMedspirationIndexed"
         }
-    ]
+    ],
+    "image": {
+        "ppd": 8,
+        "res": 16
+    }
 }
 ```
 

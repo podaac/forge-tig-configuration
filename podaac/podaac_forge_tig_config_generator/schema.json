@@ -114,6 +114,10 @@
               "minItems": 2,
               "maxItems": 2,
               "description": "Kernel size for filling small gaps, optional."
+            },
+            "fill_value": {
+              "type": "number",
+              "description": "Fill value for invalid areas, optional."
             }
           },
           "additionalProperties": false,
