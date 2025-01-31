@@ -106,7 +106,8 @@ class HiTideConfigGenerator:
 
         return config
 
-    def load_schema(self) -> Dict[str, Any]:
+    @staticmethod
+    def load_schema() -> Dict[str, Any]:
         """Load JSON schema for validation."""
         schema_path = os.path.join(os.path.dirname(__file__), "schema.json")
         with open(schema_path, "r") as file:
