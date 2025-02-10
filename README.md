@@ -1,7 +1,7 @@
-# HiTideConfigGenerator
+# HitideConfigGenerator
 
 ## Overview
-`HiTideConfigGenerator` is a Python class designed to generate configuration objects adhering to a specified JSON schema. It allows users to specify key parameters for HiTIDE processing and validates the generated configuration against a schema before saving it as a JSON file.
+`HitideConfigGenerator` is a Python class designed to generate configuration objects adhering to a specified JSON schema. It allows users to specify key parameters for HiTIDE processing and validates the generated configuration against a schema before saving it as a JSON file.
 
 ## Features
 - Generate structured configuration objects for HiTIDE processing.
@@ -18,10 +18,10 @@ pip install podaac-forge-tig-config-generator
 
 ### Creating a Configuration Generator Instance
 ```python
-from podaac.podaac_forge_tig_config_generator.generate_config import HiTideConfigGenerator
+from podaac.podaac_forge_tig_config_generator.generate_config import HitideConfigGenerator
 import json
 
-config_generator = HiTideConfigGenerator(
+config_generator = HitideConfigGenerator(
     short_name="example_dataset",
     lat_var="latitude",
     lon_var="longitude",
