@@ -6,7 +6,7 @@ from typing import Dict, Any
 from jsonschema import validate
 
 
-class HiTideConfigGenerator:
+class HitideConfigGenerator:
     """
     A class to generate configuration objects adhering to a specified schema.
     """
