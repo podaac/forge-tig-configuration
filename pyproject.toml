@@ -11,11 +11,13 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pytest = "^8.3.3"
 jsonschema = "^4.23.0"
 pandas = "^2.2.3"
 openpyxl = "^3.1.5"
 click = "^8.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
 pylint = "^3.0.0"
 flake8 = "^7.0.0"
  

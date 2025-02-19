@@ -71,7 +71,7 @@ jobs:
 
       - name: Install Dependencies and Run Tests
         run: |
-          poetry install
+          poetry install --with dev
           poetry run pylint podaac
           poetry run flake8 podaac
 
