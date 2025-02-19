@@ -30,7 +30,7 @@ jobs:
       - name: Install Software
         run: |
           poetry build
-          poetry install
+          poetry install --with dev
 
       - name: Run Tests
         run: |
