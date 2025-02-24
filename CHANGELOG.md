@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Released] - 2025-02-24
+
+### Added
+ - Added configs for QUIKSCAT_ESDR_ANCILLARY_L2_V1.1 and QUIKSCAT_ESDR_L2_WIND_STRESS_V1.1
+
 ## [Released] - 2025-01-31
 
 - Converted AVHRRMTC_G-NAVO-L2P-v2.0 to forge-py
