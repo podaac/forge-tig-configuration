@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "podaac-forge-tig-config-generator"
-version = "0.1.0"
-description = ""
+version = "0.1.0a1"
 authors = ["Simon Liu <simon.liu@jpl.nasa.gov>"]
 readme = "README.md"
+description = "Tool to generate podaac forge and tig configurations"
 
 packages = [
     { include = "podaac" },
@@ -11,13 +11,15 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pytest = "^8.3.3"
 jsonschema = "^4.23.0"
 pandas = "^2.2.3"
 openpyxl = "^3.1.5"
 click = "^8.1"
-pylint = "^3.3.2"
-flake8 = "^7.1.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pylint = "^3.0.0"
+flake8 = "^7.0.0"
  
 [build-system]
 requires = ["poetry-core"]

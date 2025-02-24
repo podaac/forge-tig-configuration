@@ -8,7 +8,7 @@ from podaac.podaac_forge_tig_config_generator import generate_config
 @lru_cache(maxsize=1)
 def get_schema():
     """Cache schema loading for performance."""
-    return generate_config.HiTideConfigGenerator.load_schema()
+    return generate_config.HitideConfigGenerator.load_schema()
 
 def validate_config(config_file):
     """Validate single configuration file."""
