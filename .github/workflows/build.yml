@@ -1,0 +1,150 @@
+name: Build Python Package
+
+on:
+  push:
+    branches: [ develop, release/**, main, feature/**, issue/**, dependabot/** ]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build:
+    name: Build, Test, Verify, Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    
+    outputs:
+      version: ${{ steps.versioning.outputs.new_version }}
+      changes: ${{ steps.check_changes.outputs.changes }}
+      pyproject_name: ${{ steps.versioning.outputs.pyproject_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed for proper versioning
+      
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v3
+        with:
+          poetry-version: 1.8.5
+
+      - name: Version Management
+        id: versioning
+        run: |
+          # Combine version management logic into a single step
+          pyproject_name=$(poetry version | awk '{print $1}')
+          echo "pyproject_name=${pyproject_name}" >> $GITHUB_OUTPUT
+          echo "pyproject_name=${pyproject_name}" >> $GITHUB_ENV
+
+          current_version=$(poetry version -s)
+          base_version=$(echo "$current_version" | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+')
+          
+          # Version calculation based on branch
+          if [[ "${{ github.ref }}" =~ ^refs/heads/(issue|feature|dependabot)/ ]]; then
+            TIMESTAMP=$(date -u +'%Y%m%d%H%M%S')
+            new_version="${base_version%%-*}.dev${TIMESTAMP}"
+          elif [[ "${{ github.ref }}" == "refs/heads/develop" ]]; then
+            new_version=$(poetry version prerelease -s)
+          elif [[ "${{ github.ref }}" =~ ^refs/heads/release/ ]]; then
+            if [[ ${current_version} =~ rc ]]; then
+              new_version=$(poetry version prerelease -s)
+            else
+              new_version="${GITHUB_REF#refs/heads/release/}rc1"
+            fi
+          elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            new_version=${base_version}
+          fi
+          
+          poetry version ${new_version}
+          echo "new_version=${new_version}" >> $GITHUB_OUTPUT
+          echo "new_version=${new_version}" >> $GITHUB_ENV
+          echo "old_version=${current_version}" >> $GITHUB_ENV
+
+      - name: Install Dependencies and Run Tests
+        run: |
+          poetry install --with dev
+          poetry run pylint podaac
+          poetry run flake8 podaac
+
+      - name: Security Scan
+        uses: snyk/actions/python@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: test
+          args: --org=${{ secrets.SNYK_ORG_ID }} --project-name=${{ github.repository }} --severity-threshold=high --fail-on=all
+
+      - name: Build Package
+        run: poetry build
+
+      - name: Quick check for changes
+        id: check_changes
+        if: |
+          github.ref == 'refs/heads/develop' ||
+          github.ref == 'refs/heads/main'    ||
+          startsWith(github.ref, 'refs/heads/release')
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit Version Bump
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git commit -am "/version ${{ env.new_version }}"
+          git push
+
+      - name: Push Tag
+        env:
+          VERSION: ${{ env.new_version }}
+        if: |
+          github.ref == 'refs/heads/develop' ||
+          github.ref == 'refs/heads/main'    ||
+          startsWith(github.ref, 'refs/heads/release')
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git tag -a "${VERSION}" -m "Version ${VERSION}"
+          git push origin "${VERSION}"
+
+      - name: Publish to PyPI
+        if: |
+          github.ref == 'refs/heads/develop' ||
+          github.ref == 'refs/heads/main' ||
+          startsWith(github.ref, 'refs/heads/release/') ||
+          github.event.head_commit.message == '/deploy'
+        env:
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
+          POETRY_PYPI_TOKEN_TESTPYPI: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          POETRY_REQUESTS_TIMEOUT: 60
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            poetry publish --skip-existing
+          else
+            poetry config repositories.testpypi https://test.pypi.org/legacy/
+            poetry publish -r testpypi
+          fi
+
+      - name: Wait for package
+        if: |
+          github.ref == 'refs/heads/develop' ||
+          github.ref == 'refs/heads/main' ||
+          startsWith(github.ref, 'refs/heads/release/') ||
+          github.event.head_commit.message == '/deploy'
+        id: check_publish
+        run: |
+          pip install tenacity logging 
+          python3 ${GITHUB_WORKSPACE}/.github/workflows/wait-for-pypi.py ${{ env.pyproject_name }}==${{ env.new_version }}
