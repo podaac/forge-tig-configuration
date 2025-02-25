@@ -5,7 +5,158 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Released] - 2025-02-24
+
+### Added
+ - Added configs for QUIKSCAT_ESDR_ANCILLARY_L2_V1.1 and QUIKSCAT_ESDR_L2_WIND_STRESS_V1.1
+
+## [Released] - 2025-01-31
+
+- Converted AVHRRMTC_G-NAVO-L2P-v2.0 to forge-py
+
+
+## [Released] - 2024-12-11
+
+### Added
+ - Added config for NASA_SSH_REF_ALONGTRACK_V1
+
+## [Released] - 2024-12-04
+
+### Added
+ - Added Schema validations
+ - Added a new forge tig configuration generator
+ - Added in test to validate json structure and schema validate the configurations
+ - Updated configurations for new forge-py
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-11-25
+
+### Added
+ - Added config for EWSG2-NAVO-L2P-v01
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-10-02
+
+### Added
+### Changed
+- Added COWVR_STPH8_L1_TSDR_V10.0
+- Added COWVR_STPH8_L2_EDR_V10.0
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-9-13
+
+### Added
+### Changed
+- Updated SMAP_RSS_L2_SSS_V5 and SMAP_RSS_L2_SSS_V6
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-9-10
+
+### Added
+### Changed
+- Updated PRIM_SMAP_L2_V1
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-08-08
+
+### Added
+### Changed
+- Reformatted all configs with "pretty" function to make more readable
+### Deprecated
+### Removed
+- Removed "variables" field from all configs.  No longer used by HiTIDE (uses CMR to get variable list instead)
+### Fixed
+### Security
+
+## [Released] - 2024-05-24
+
+### Added
+- Add COWVR_STPH8_L2_EDR_V9.0 and COWVR_STPH8_L1_TSDR_V9.0 collections
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-05-13
+
+### Added
+- Config files for MERGED_TP_J1_OSTM_OST_CYCLES_V52
+- Add hitide palette for all colormaps available in matplotlib
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-05-06
+
+### Added
+- Config files for ASCATA_ESDR_ANCILLARY_L2_V1.1 and ASCATB_ESDR_ANCILLARY_L2_V1.1
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-05-02
+
+### Added
+### Changed
+- Added image variable and image entries for SCATSAT1_ESDR_L2_WIND_STRESS_V1.1 config.
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-04-15
+
+### Added
+### Changed
+- Updated config for VIIRS_N21-NAVO-L2P-v3.0 (new min/max's)
+- Updated config for VIIRS_N20-NAVO-L2P-v3.0 (new min/max's)
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+### Added
+- Added config for VIIRS_N21-NAVO-L2P-v3.0
+- Added config for VIIRS_N20-NAVO-L2P-v3.0
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-02-29
+
+### Added
+- Added configs for CYGNSS_L2_V3.2 and SMAP_RSS_L2_SSS_V6
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [Released] - 2024-02-28
 
 ### Added
 - Add new deploy workflow to deploy to all env when merge to main
@@ -419,6 +570,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released] - 05-19-2020
 ### Added
+
+## [Released] - 2024-08-28
+
+### Added
+ - Added config for CYGNSS_L2_SURFACE_FLUX_V3.2 
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
 
 - **PODAAC-3276**
   - Generated collection_name.cfg file through persistent-id.cfg

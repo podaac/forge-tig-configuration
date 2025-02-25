@@ -1,0 +1,1037 @@
+{
+  "Palette": {
+    "attribute": [
+      {
+        "name": "name",
+        "value": "Reds_rColorMap"
+      },
+      {
+        "name": "description"
+      }
+    ],
+    "values": {
+      "value": [
+        {
+          "scaleIndex": "0",
+          "color": "103,0,12"
+        },
+        {
+          "scaleIndex": "0.0039",
+          "color": "103,0,12"
+        },
+        {
+          "scaleIndex": "0.0078",
+          "color": "104,0,13"
+        },
+        {
+          "scaleIndex": "0.0118",
+          "color": "108,1,13"
+        },
+        {
+          "scaleIndex": "0.0157",
+          "color": "110,1,14"
+        },
+        {
+          "scaleIndex": "0.0196",
+          "color": "112,2,14"
+        },
+        {
+          "scaleIndex": "0.0235",
+          "color": "114,2,14"
+        },
+        {
+          "scaleIndex": "0.0275",
+          "color": "116,3,14"
+        },
+        {
+          "scaleIndex": "0.0314",
+          "color": "118,3,15"
+        },
+        {
+          "scaleIndex": "0.0353",
+          "color": "120,4,15"
+        },
+        {
+          "scaleIndex": "0.0392",
+          "color": "122,4,15"
+        },
+        {
+          "scaleIndex": "0.0431",
+          "color": "124,5,15"
+        },
+        {
+          "scaleIndex": "0.0471",
+          "color": "126,5,16"
+        },
+        {
+          "scaleIndex": "0.051",
+          "color": "128,6,16"
+        },
+        {
+          "scaleIndex": "0.0549",
+          "color": "130,6,16"
+        },
+        {
+          "scaleIndex": "0.0588",
+          "color": "132,7,16"
+        },
+        {
+          "scaleIndex": "0.0627",
+          "color": "134,7,17"
+        },
+        {
+          "scaleIndex": "0.0667",
+          "color": "136,8,17"
+        },
+        {
+          "scaleIndex": "0.0706",
+          "color": "138,8,17"
+        },
+        {
+          "scaleIndex": "0.0745",
+          "color": "139,8,17"
+        },
+        {
+          "scaleIndex": "0.0784",
+          "color": "141,9,18"
+        },
+        {
+          "scaleIndex": "0.0824",
+          "color": "143,9,18"
+        },
+        {
+          "scaleIndex": "0.0863",
+          "color": "145,10,18"
+        },
+        {
+          "scaleIndex": "0.0902",
+          "color": "147,10,18"
+        },
+        {
+          "scaleIndex": "0.0941",
+          "color": "149,11,19"
+        },
+        {
+          "scaleIndex": "0.098",
+          "color": "151,11,19"
+        },
+        {
+          "scaleIndex": "0.102",
+          "color": "153,12,19"
+        },
+        {
+          "scaleIndex": "0.1059",
+          "color": "155,12,19"
+        },
+        {
+          "scaleIndex": "0.1098",
+          "color": "157,13,20"
+        },
+        {
+          "scaleIndex": "0.1137",
+          "color": "159,13,20"
+        },
+        {
+          "scaleIndex": "0.1176",
+          "color": "161,14,20"
+        },
+        {
+          "scaleIndex": "0.1216",
+          "color": "163,14,20"
+        },
+        {
+          "scaleIndex": "0.1255",
+          "color": "165,15,21"
+        },
+        {
+          "scaleIndex": "0.1294",
+          "color": "166,15,21"
+        },
+        {
+          "scaleIndex": "0.1333",
+          "color": "167,15,21"
+        },
+        {
+          "scaleIndex": "0.1373",
+          "color": "168,15,21"
+        },
+        {
+          "scaleIndex": "0.1412",
+          "color": "169,16,22"
+        },
+        {
+          "scaleIndex": "0.1451",
+          "color": "171,16,22"
+        },
+        {
+          "scaleIndex": "0.149",
+          "color": "172,16,22"
+        },
+        {
+          "scaleIndex": "0.1529",
+          "color": "173,17,22"
+        },
+        {
+          "scaleIndex": "0.1569",
+          "color": "174,17,23"
+        },
+        {
+          "scaleIndex": "0.1608",
+          "color": "175,17,23"
+        },
+        {
+          "scaleIndex": "0.1647",
+          "color": "177,17,23"
+        },
+        {
+          "scaleIndex": "0.1686",
+          "color": "178,18,23"
+        },
+        {
+          "scaleIndex": "0.1725",
+          "color": "179,18,24"
+        },
+        {
+          "scaleIndex": "0.1765",
+          "color": "180,18,24"
+        },
+        {
+          "scaleIndex": "0.1804",
+          "color": "181,18,24"
+        },
+        {
+          "scaleIndex": "0.1843",
+          "color": "183,19,24"
+        },
+        {
+          "scaleIndex": "0.1882",
+          "color": "184,19,25"
+        },
+        {
+          "scaleIndex": "0.1922",
+          "color": "185,19,25"
+        },
+        {
+          "scaleIndex": "0.1961",
+          "color": "186,20,25"
+        },
+        {
+          "scaleIndex": "0.2",
+          "color": "187,20,25"
+        },
+        {
+          "scaleIndex": "0.2039",
+          "color": "188,20,26"
+        },
+        {
+          "scaleIndex": "0.2078",
+          "color": "190,20,26"
+        },
+        {
+          "scaleIndex": "0.2118",
+          "color": "191,21,26"
+        },
+        {
+          "scaleIndex": "0.2157",
+          "color": "192,21,26"
+        },
+        {
+          "scaleIndex": "0.2196",
+          "color": "193,21,27"
+        },
+        {
+          "scaleIndex": "0.2235",
+          "color": "194,22,27"
+        },
+        {
+          "scaleIndex": "0.2275",
+          "color": "196,22,27"
+        },
+        {
+          "scaleIndex": "0.2314",
+          "color": "197,22,27"
+        },
+        {
+          "scaleIndex": "0.2353",
+          "color": "198,22,28"
+        },
+        {
+          "scaleIndex": "0.2392",
+          "color": "199,23,28"
+        },
+        {
+          "scaleIndex": "0.2431",
+          "color": "200,23,28"
+        },
+        {
+          "scaleIndex": "0.2471",
+          "color": "202,23,28"
+        },
+        {
+          "scaleIndex": "0.251",
+          "color": "203,24,29"
+        },
+        {
+          "scaleIndex": "0.2549",
+          "color": "204,25,29"
+        },
+        {
+          "scaleIndex": "0.2588",
+          "color": "205,26,30"
+        },
+        {
+          "scaleIndex": "0.2627",
+          "color": "206,27,30"
+        },
+        {
+          "scaleIndex": "0.2667",
+          "color": "207,28,31"
+        },
+        {
+          "scaleIndex": "0.2706",
+          "color": "208,29,31"
+        },
+        {
+          "scaleIndex": "0.2745",
+          "color": "210,30,31"
+        },
+        {
+          "scaleIndex": "0.2784",
+          "color": "211,31,32"
+        },
+        {
+          "scaleIndex": "0.2824",
+          "color": "212,33,32"
+        },
+        {
+          "scaleIndex": "0.2863",
+          "color": "213,34,33"
+        },
+        {
+          "scaleIndex": "0.2902",
+          "color": "214,35,33"
+        },
+        {
+          "scaleIndex": "0.2941",
+          "color": "215,36,34"
+        },
+        {
+          "scaleIndex": "0.298",
+          "color": "216,37,34"
+        },
+        {
+          "scaleIndex": "0.302",
+          "color": "217,38,35"
+        },
+        {
+          "scaleIndex": "0.3059",
+          "color": "219,39,35"
+        },
+        {
+          "scaleIndex": "0.3098",
+          "color": "220,40,36"
+        },
+        {
+          "scaleIndex": "0.3137",
+          "color": "221,41,36"
+        },
+        {
+          "scaleIndex": "0.3176",
+          "color": "222,42,37"
+        },
+        {
+          "scaleIndex": "0.3216",
+          "color": "223,44,37"
+        },
+        {
+          "scaleIndex": "0.3255",
+          "color": "224,45,38"
+        },
+        {
+          "scaleIndex": "0.3294",
+          "color": "225,46,38"
+        },
+        {
+          "scaleIndex": "0.3333",
+          "color": "227,47,39"
+        },
+        {
+          "scaleIndex": "0.3373",
+          "color": "228,48,39"
+        },
+        {
+          "scaleIndex": "0.3412",
+          "color": "229,49,39"
+        },
+        {
+          "scaleIndex": "0.3451",
+          "color": "230,50,40"
+        },
+        {
+          "scaleIndex": "0.349",
+          "color": "231,51,40"
+        },
+        {
+          "scaleIndex": "0.3529",
+          "color": "232,52,41"
+        },
+        {
+          "scaleIndex": "0.3569",
+          "color": "233,53,41"
+        },
+        {
+          "scaleIndex": "0.3608",
+          "color": "234,55,42"
+        },
+        {
+          "scaleIndex": "0.3647",
+          "color": "236,56,42"
+        },
+        {
+          "scaleIndex": "0.3686",
+          "color": "237,57,43"
+        },
+        {
+          "scaleIndex": "0.3725",
+          "color": "238,58,43"
+        },
+        {
+          "scaleIndex": "0.3765",
+          "color": "239,59,44"
+        },
+        {
+          "scaleIndex": "0.3804",
+          "color": "239,61,45"
+        },
+        {
+          "scaleIndex": "0.3843",
+          "color": "239,62,46"
+        },
+        {
+          "scaleIndex": "0.3882",
+          "color": "240,63,47"
+        },
+        {
+          "scaleIndex": "0.3922",
+          "color": "240,65,48"
+        },
+        {
+          "scaleIndex": "0.3961",
+          "color": "241,66,49"
+        },
+        {
+          "scaleIndex": "0.4",
+          "color": "241,68,50"
+        },
+        {
+          "scaleIndex": "0.4039",
+          "color": "241,69,50"
+        },
+        {
+          "scaleIndex": "0.4078",
+          "color": "242,71,51"
+        },
+        {
+          "scaleIndex": "0.4118",
+          "color": "242,72,52"
+        },
+        {
+          "scaleIndex": "0.4157",
+          "color": "242,74,53"
+        },
+        {
+          "scaleIndex": "0.4196",
+          "color": "243,75,54"
+        },
+        {
+          "scaleIndex": "0.4235",
+          "color": "243,77,55"
+        },
+        {
+          "scaleIndex": "0.4275",
+          "color": "244,78,56"
+        },
+        {
+          "scaleIndex": "0.4314",
+          "color": "244,80,57"
+        },
+        {
+          "scaleIndex": "0.4353",
+          "color": "244,81,58"
+        },
+        {
+          "scaleIndex": "0.4392",
+          "color": "245,83,59"
+        },
+        {
+          "scaleIndex": "0.4431",
+          "color": "245,84,60"
+        },
+        {
+          "scaleIndex": "0.4471",
+          "color": "245,86,61"
+        },
+        {
+          "scaleIndex": "0.451",
+          "color": "246,87,62"
+        },
+        {
+          "scaleIndex": "0.4549",
+          "color": "246,89,63"
+        },
+        {
+          "scaleIndex": "0.4588",
+          "color": "247,90,64"
+        },
+        {
+          "scaleIndex": "0.4627",
+          "color": "247,91,65"
+        },
+        {
+          "scaleIndex": "0.4667",
+          "color": "247,93,66"
+        },
+        {
+          "scaleIndex": "0.4706",
+          "color": "248,94,66"
+        },
+        {
+          "scaleIndex": "0.4745",
+          "color": "248,96,67"
+        },
+        {
+          "scaleIndex": "0.4784",
+          "color": "248,97,68"
+        },
+        {
+          "scaleIndex": "0.4824",
+          "color": "249,99,69"
+        },
+        {
+          "scaleIndex": "0.4863",
+          "color": "249,100,70"
+        },
+        {
+          "scaleIndex": "0.4902",
+          "color": "250,102,71"
+        },
+        {
+          "scaleIndex": "0.4941",
+          "color": "250,103,72"
+        },
+        {
+          "scaleIndex": "0.498",
+          "color": "250,105,73"
+        },
+        {
+          "scaleIndex": "0.502",
+          "color": "251,106,74"
+        },
+        {
+          "scaleIndex": "0.5059",
+          "color": "251,107,75"
+        },
+        {
+          "scaleIndex": "0.5098",
+          "color": "251,109,77"
+        },
+        {
+          "scaleIndex": "0.5137",
+          "color": "251,110,78"
+        },
+        {
+          "scaleIndex": "0.5176",
+          "color": "251,111,79"
+        },
+        {
+          "scaleIndex": "0.5216",
+          "color": "251,112,80"
+        },
+        {
+          "scaleIndex": "0.5255",
+          "color": "251,114,82"
+        },
+        {
+          "scaleIndex": "0.5294",
+          "color": "251,115,83"
+        },
+        {
+          "scaleIndex": "0.5333",
+          "color": "251,116,84"
+        },
+        {
+          "scaleIndex": "0.5373",
+          "color": "251,117,85"
+        },
+        {
+          "scaleIndex": "0.5412",
+          "color": "251,119,87"
+        },
+        {
+          "scaleIndex": "0.5451",
+          "color": "251,120,88"
+        },
+        {
+          "scaleIndex": "0.549",
+          "color": "251,121,89"
+        },
+        {
+          "scaleIndex": "0.5529",
+          "color": "251,122,90"
+        },
+        {
+          "scaleIndex": "0.5569",
+          "color": "251,124,92"
+        },
+        {
+          "scaleIndex": "0.5608",
+          "color": "251,125,93"
+        },
+        {
+          "scaleIndex": "0.5647",
+          "color": "251,126,94"
+        },
+        {
+          "scaleIndex": "0.5686",
+          "color": "251,127,95"
+        },
+        {
+          "scaleIndex": "0.5725",
+          "color": "251,129,97"
+        },
+        {
+          "scaleIndex": "0.5765",
+          "color": "251,130,98"
+        },
+        {
+          "scaleIndex": "0.5804",
+          "color": "251,131,99"
+        },
+        {
+          "scaleIndex": "0.5843",
+          "color": "251,132,100"
+        },
+        {
+          "scaleIndex": "0.5882",
+          "color": "251,134,102"
+        },
+        {
+          "scaleIndex": "0.5922",
+          "color": "251,135,103"
+        },
+        {
+          "scaleIndex": "0.5961",
+          "color": "251,136,104"
+        },
+        {
+          "scaleIndex": "0.6",
+          "color": "251,138,106"
+        },
+        {
+          "scaleIndex": "0.6039",
+          "color": "251,139,107"
+        },
+        {
+          "scaleIndex": "0.6078",
+          "color": "251,140,108"
+        },
+        {
+          "scaleIndex": "0.6118",
+          "color": "251,141,109"
+        },
+        {
+          "scaleIndex": "0.6157",
+          "color": "251,143,111"
+        },
+        {
+          "scaleIndex": "0.6196",
+          "color": "251,144,112"
+        },
+        {
+          "scaleIndex": "0.6235",
+          "color": "251,145,113"
+        },
+        {
+          "scaleIndex": "0.6275",
+          "color": "252,146,114"
+        },
+        {
+          "scaleIndex": "0.6314",
+          "color": "252,148,116"
+        },
+        {
+          "scaleIndex": "0.6353",
+          "color": "252,149,117"
+        },
+        {
+          "scaleIndex": "0.6392",
+          "color": "252,150,119"
+        },
+        {
+          "scaleIndex": "0.6431",
+          "color": "252,151,120"
+        },
+        {
+          "scaleIndex": "0.6471",
+          "color": "252,153,122"
+        },
+        {
+          "scaleIndex": "0.651",
+          "color": "252,154,123"
+        },
+        {
+          "scaleIndex": "0.6549",
+          "color": "252,155,125"
+        },
+        {
+          "scaleIndex": "0.6588",
+          "color": "252,157,126"
+        },
+        {
+          "scaleIndex": "0.6627",
+          "color": "252,158,128"
+        },
+        {
+          "scaleIndex": "0.6667",
+          "color": "252,159,129"
+        },
+        {
+          "scaleIndex": "0.6706",
+          "color": "252,160,131"
+        },
+        {
+          "scaleIndex": "0.6745",
+          "color": "252,162,132"
+        },
+        {
+          "scaleIndex": "0.6784",
+          "color": "252,163,134"
+        },
+        {
+          "scaleIndex": "0.6824",
+          "color": "252,164,135"
+        },
+        {
+          "scaleIndex": "0.6863",
+          "color": "252,166,137"
+        },
+        {
+          "scaleIndex": "0.6902",
+          "color": "252,167,138"
+        },
+        {
+          "scaleIndex": "0.6941",
+          "color": "252,168,139"
+        },
+        {
+          "scaleIndex": "0.698",
+          "color": "252,169,141"
+        },
+        {
+          "scaleIndex": "0.702",
+          "color": "252,171,142"
+        },
+        {
+          "scaleIndex": "0.7059",
+          "color": "252,172,144"
+        },
+        {
+          "scaleIndex": "0.7098",
+          "color": "252,173,145"
+        },
+        {
+          "scaleIndex": "0.7137",
+          "color": "252,175,147"
+        },
+        {
+          "scaleIndex": "0.7176",
+          "color": "252,176,148"
+        },
+        {
+          "scaleIndex": "0.7216",
+          "color": "252,177,150"
+        },
+        {
+          "scaleIndex": "0.7255",
+          "color": "252,178,151"
+        },
+        {
+          "scaleIndex": "0.7294",
+          "color": "252,180,153"
+        },
+        {
+          "scaleIndex": "0.7333",
+          "color": "252,181,154"
+        },
+        {
+          "scaleIndex": "0.7373",
+          "color": "252,182,156"
+        },
+        {
+          "scaleIndex": "0.7412",
+          "color": "252,184,157"
+        },
+        {
+          "scaleIndex": "0.7451",
+          "color": "252,185,159"
+        },
+        {
+          "scaleIndex": "0.749",
+          "color": "252,186,160"
+        },
+        {
+          "scaleIndex": "0.7529",
+          "color": "252,187,162"
+        },
+        {
+          "scaleIndex": "0.7569",
+          "color": "252,189,163"
+        },
+        {
+          "scaleIndex": "0.7608",
+          "color": "252,190,165"
+        },
+        {
+          "scaleIndex": "0.7647",
+          "color": "252,191,166"
+        },
+        {
+          "scaleIndex": "0.7686",
+          "color": "252,192,168"
+        },
+        {
+          "scaleIndex": "0.7725",
+          "color": "252,193,169"
+        },
+        {
+          "scaleIndex": "0.7765",
+          "color": "252,194,171"
+        },
+        {
+          "scaleIndex": "0.7804",
+          "color": "252,195,172"
+        },
+        {
+          "scaleIndex": "0.7843",
+          "color": "252,197,174"
+        },
+        {
+          "scaleIndex": "0.7882",
+          "color": "252,198,175"
+        },
+        {
+          "scaleIndex": "0.7922",
+          "color": "252,199,177"
+        },
+        {
+          "scaleIndex": "0.7961",
+          "color": "252,200,179"
+        },
+        {
+          "scaleIndex": "0.8",
+          "color": "252,201,180"
+        },
+        {
+          "scaleIndex": "0.8039",
+          "color": "252,202,182"
+        },
+        {
+          "scaleIndex": "0.8078",
+          "color": "252,204,183"
+        },
+        {
+          "scaleIndex": "0.8118",
+          "color": "252,205,185"
+        },
+        {
+          "scaleIndex": "0.8157",
+          "color": "253,206,186"
+        },
+        {
+          "scaleIndex": "0.8196",
+          "color": "253,207,188"
+        },
+        {
+          "scaleIndex": "0.8235",
+          "color": "253,208,189"
+        },
+        {
+          "scaleIndex": "0.8275",
+          "color": "253,209,191"
+        },
+        {
+          "scaleIndex": "0.8314",
+          "color": "253,211,192"
+        },
+        {
+          "scaleIndex": "0.8353",
+          "color": "253,212,194"
+        },
+        {
+          "scaleIndex": "0.8392",
+          "color": "253,213,195"
+        },
+        {
+          "scaleIndex": "0.8431",
+          "color": "253,214,197"
+        },
+        {
+          "scaleIndex": "0.8471",
+          "color": "253,215,199"
+        },
+        {
+          "scaleIndex": "0.851",
+          "color": "253,216,200"
+        },
+        {
+          "scaleIndex": "0.8549",
+          "color": "253,218,202"
+        },
+        {
+          "scaleIndex": "0.8588",
+          "color": "253,219,203"
+        },
+        {
+          "scaleIndex": "0.8627",
+          "color": "253,220,205"
+        },
+        {
+          "scaleIndex": "0.8667",
+          "color": "253,221,206"
+        },
+        {
+          "scaleIndex": "0.8706",
+          "color": "253,222,208"
+        },
+        {
+          "scaleIndex": "0.8745",
+          "color": "253,223,209"
+        },
+        {
+          "scaleIndex": "0.8784",
+          "color": "254,224,210"
+        },
+        {
+          "scaleIndex": "0.8824",
+          "color": "254,225,211"
+        },
+        {
+          "scaleIndex": "0.8863",
+          "color": "254,225,212"
+        },
+        {
+          "scaleIndex": "0.8902",
+          "color": "254,226,213"
+        },
+        {
+          "scaleIndex": "0.8941",
+          "color": "254,227,214"
+        },
+        {
+          "scaleIndex": "0.898",
+          "color": "254,227,215"
+        },
+        {
+          "scaleIndex": "0.902",
+          "color": "254,228,216"
+        },
+        {
+          "scaleIndex": "0.9059",
+          "color": "254,229,217"
+        },
+        {
+          "scaleIndex": "0.9098",
+          "color": "254,229,218"
+        },
+        {
+          "scaleIndex": "0.9137",
+          "color": "254,230,219"
+        },
+        {
+          "scaleIndex": "0.9176",
+          "color": "254,231,220"
+        },
+        {
+          "scaleIndex": "0.9216",
+          "color": "254,231,221"
+        },
+        {
+          "scaleIndex": "0.9255",
+          "color": "254,232,222"
+        },
+        {
+          "scaleIndex": "0.9294",
+          "color": "254,233,223"
+        },
+        {
+          "scaleIndex": "0.9333",
+          "color": "254,233,224"
+        },
+        {
+          "scaleIndex": "0.9373",
+          "color": "254,234,224"
+        },
+        {
+          "scaleIndex": "0.9412",
+          "color": "254,235,225"
+        },
+        {
+          "scaleIndex": "0.9451",
+          "color": "254,235,226"
+        },
+        {
+          "scaleIndex": "0.949",
+          "color": "254,236,227"
+        },
+        {
+          "scaleIndex": "0.9529",
+          "color": "254,237,228"
+        },
+        {
+          "scaleIndex": "0.9569",
+          "color": "254,237,229"
+        },
+        {
+          "scaleIndex": "0.9608",
+          "color": "254,238,230"
+        },
+        {
+          "scaleIndex": "0.9647",
+          "color": "254,239,231"
+        },
+        {
+          "scaleIndex": "0.9686",
+          "color": "254,239,232"
+        },
+        {
+          "scaleIndex": "0.9725",
+          "color": "254,240,233"
+        },
+        {
+          "scaleIndex": "0.9765",
+          "color": "254,241,234"
+        },
+        {
+          "scaleIndex": "0.9804",
+          "color": "254,241,235"
+        },
+        {
+          "scaleIndex": "0.9843",
+          "color": "254,242,236"
+        },
+        {
+          "scaleIndex": "0.9882",
+          "color": "254,243,237"
+        },
+        {
+          "scaleIndex": "0.9922",
+          "color": "254,244,239"
+        },
+        {
+          "scaleIndex": "1",
+          "color": "255,245,240"
+        }
+      ]
+    }
+  }
+}

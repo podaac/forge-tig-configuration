@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "podaac-forge-tig-config-generator"
+version = "0.1.0a1"
+authors = ["Simon Liu <simon.liu@jpl.nasa.gov>"]
+readme = "README.md"
+description = "Tool to generate podaac forge and tig configurations"
+
+packages = [
+    { include = "podaac" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jsonschema = "^4.23.0"
+pandas = "^2.2.3"
+openpyxl = "^3.1.5"
+click = "^8.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pylint = "^3.0.0"
+flake8 = "^7.0.0"
+ 
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+generate_config = 'podaac.podaac_forge_tig_config_generator.generate_config:generate_hitide_config'

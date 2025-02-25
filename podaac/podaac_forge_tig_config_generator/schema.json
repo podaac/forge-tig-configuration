@@ -1,0 +1,294 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "shortName": {
+      "type": "string",
+      "description": "Short name of the dataset, required."
+    },
+    "latVar": {
+      "type": "string",
+      "description": "Path to the latitude variable in the data, required."
+    },
+    "lonVar": {
+      "type": "string",
+      "description": "Path to the longitude variable in the data, required."
+    },
+    "timeVar": {
+      "type": "string",
+      "description": "Name of the time variable, optional."
+    },
+    "is360": {
+      "type": "boolean",
+      "description": "Indicates if longitude is in 0-360 format, required."
+    },
+    "tiles": {
+      "type": "object",
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "additionalProperties": false,
+            "description": "Step size for each tile, represented as integers."
+          },
+          "minItems": 2,
+          "maxItems": 3,
+          "additionalProperties": false,
+          "description": "An array of two integers representing the tile step sizes."
+        }
+      },
+      "required": ["steps"],
+      "additionalProperties": false,
+      "description": "Tile configuration with step sizes for the grid."
+    },
+    "global_grid": {
+      "type": "boolean",
+      "description": "Indicates whether the grid is global or not. Optional."
+    },
+    "footprinter": {
+      "type": "string",
+      "enum": ["forge-py"],
+      "description": "The footprinter to use, must be 'forge-py'."
+    },
+    "tolerance": {
+      "type": "number",
+      "description": "Tolerance value (optional). Can be a float or integer."
+    },
+    "footprint": {
+      "type": "object",
+      "properties": {
+        "findValid": {
+          "type": "boolean",
+          "description": "Indicates whether to find valid footprint values."
+        },
+        "b": {
+          "type": "string",
+          "description": "The 'b' footprint pattern."
+        },
+        "s2": {
+          "type": "string",
+          "description": "The 's2' footprint pattern."
+        },
+        "t": {
+          "type": "string",
+          "description": "The 't' footprint pattern."
+        },
+        "s1": {
+          "type": "string",
+          "description": "The 's1' footprint pattern."
+        },
+        "removeOrigin": {
+          "type": "boolean",
+          "description": "Unknown usage for forge"
+        },
+        "strategy": {
+          "type": "string",
+          "enum": ["open_cv", "alpha_shape", "linestring", "periodic", "swot_linestring", "smap", "polarsides", "polar"],
+          "description": "Footprint calculation strategy, required."
+        },
+        "open_cv": {
+          "type": "object",
+          "properties": {
+            "pixel_height": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Height of the pixel grid, optional."
+            },
+            "simplify": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Simplification tolerance for a polygon, optional."
+            },
+            "min_area": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Minimum area for a polygon or it will be removed, optional."
+            },
+            "fill_kernel": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "minItems": 2,
+              "maxItems": 2,
+              "description": "Kernel size for filling small gaps, optional."
+            },
+            "fill_value": {
+              "type": "number",
+              "description": "Fill value for invalid areas, optional."
+            }
+          },
+          "additionalProperties": false,
+          "description": "Parameters for the OpenCV strategy, optional."
+        },
+        "alpha_shape": {
+          "type": "object",
+          "properties": {
+            "alpha": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Alpha parameter for the alpha shape algorithm, optional."
+            },
+            "thinning": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "enum": ["bin_avg", "standard"],
+                  "description": "Thinning method, optional."
+                },
+                "value": {
+                  "oneOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "description": "Parameters for thinning, optional."
+            },
+            "cutoff_lat": {
+              "type": "number",
+              "description": "Latitude cutoff for the footprint, optional."
+            },
+            "smooth_poles": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2,
+              "description": "Latitude range for smoothing near poles, optional."
+            },
+            "simplify": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Simplification tolerance for a polygon, optional."
+            },
+            "min_area": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Minimum area for a polygon or it will be removed, optional."
+            },
+            "fill_value": {
+              "type": "number",
+              "description": "Fill value for invalid areas, optional."
+            }
+          },
+          "additionalProperties": false,
+          "description": "Parameters for the alpha shape strategy, optional."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Footprint calculation parameters, optional."
+    },
+    "imgVariables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of the image variable, required."
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the image variable, optional."
+          },
+          "units": {
+            "type": "string",
+            "description": "Units of the image variable, optional."
+          },
+          "fill_missing": {
+            "type": "boolean",
+            "description": "Fill in the image if the data resolution is too high and needs to be filled in spots"
+          },
+          "fill_value": {
+              "type": "number",
+              "description": "Fill value for a variable if theres no fill value"
+          },
+          "is_swot_expert": {
+              "type": "boolean",
+              "description": "boolean to indicate if variable is a swot expert variable for a specific algorithm"
+          },
+          "ppd": {
+            "type": "integer",
+            "description": "Pixels per degree (ppd) for the variable."
+          },
+          "min": {
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "Minimum value of the variable as a number (integer or float)."
+              },
+              {
+                "type": "string",
+                "pattern": "^-?\\d+(\\.\\d+)?$",
+                "description": "Minimum value of the variable as a string. Must be a valid number."
+              }
+            ]
+          },
+          "max": {
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "Maximum value of the variable as a number (integer or float)."
+              },
+              {
+                "type": "string",
+                "pattern": "^-?\\d+(\\.\\d+)?$",
+                "description": "Maximum value of the variable as a string. Must be a valid number."
+              }
+            ]
+          },
+          "palette": {
+            "type": "string",
+            "description": "Palette used for visualization, optional."
+          },
+          "legends": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Legend file name, expected to be a string representing a file path. Note should be invalid for new tig should be removed"
+            },
+            "description": "List of legend files."
+          }
+        },
+        "required": ["id", "min", "max", "palette"],
+        "additionalProperties": false,
+        "description": "Properties of an image variable."
+      },
+      "description": "List of image variables, optional."
+    },
+    "image": {
+      "type": "object",
+      "properties": {
+        "ppd": {
+          "type": "integer",
+          "description": "Pixels per degree (ppd) for the image."
+        },
+        "res": {
+          "type": "integer",
+          "description": "Resolution of the image (res)."
+        }
+      },
+      "required": ["ppd", "res"],
+      "additionalProperties": false,
+      "description": "Image configuration with pixels per degree and resolution."
+    }
+
+  },
+  "required": ["shortName", "latVar", "lonVar", "is360"],
+  "additionalProperties": false
+}
