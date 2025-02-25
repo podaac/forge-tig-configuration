@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [0.1.0]
+
+### Added
+ - Added new config generator `HitideConfigGenerator` to release to pypi.org
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2025-02-24
 
 ### Added
@@ -88,7 +100,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released] - 2024-05-24
 
 ### Added
-- Add new deploy workflow to deploy to all env when merge to main
 - Add COWVR_STPH8_L2_EDR_V9.0 and COWVR_STPH8_L1_TSDR_V9.0 collections
 ### Changed
 ### Deprecated
