@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [Released] - 2025-02-26
+
+### Added
+ - Converted SMAP_JPL_L2B_SSS_CAP_V5 to forge-py
+
+
 ## [0.1.0]
 
 ### Added
@@ -25,7 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released] - 2025-01-31
 
 - Converted AVHRRMTC_G-NAVO-L2P-v2.0 to forge-py
-
 
 ## [Released] - 2024-12-11
 
