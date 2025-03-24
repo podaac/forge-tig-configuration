@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [Released] - 2025-03-24
+
+### Added
+ - cfg file for SCATSAT1_ESDR_ANCILLARY_L2_V1.1
+
+
 ## [Released] - 2025-02-26
 
 ### Added
