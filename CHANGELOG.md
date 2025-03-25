@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Released] - 2025-03-25
+
+### Added
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_LR_SSH_BASIC_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_LR_SSH_EXPERT_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_LR_SSH_WINDWAVE_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_GDR_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_GDR_SGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_GDR_SSHA_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_IGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_IGDR_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_IGDR_SGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_IGDR_SSHA_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_OGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_OGDR_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_OGDR_SSHA_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_RAD_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_RAD_IGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_RAD_OGDR_D.cfg
 
 ## [Released] - 2025-03-24
 
