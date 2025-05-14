@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
  - Updated config file for SMAP_JPL_L2B_SSS_CAP_V5
+ - Updated config file for SMAP_JPL_L2B_NRT_SSS_CAP_V5
 
 
 ## [Released] - 2025-03-31
