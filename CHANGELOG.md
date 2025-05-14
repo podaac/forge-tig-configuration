@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [Released] - 2025-05-14
+
+### Changed
+ - Updated config file for SMAP_JPL_L2B_SSS_CAP_V5
+
+
 ## [Released] - 2025-03-31
 
 ### Changed
