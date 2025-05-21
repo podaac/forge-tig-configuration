@@ -196,10 +196,6 @@
               "type": "number",
               "minimum": 0,
               "description": "Simplification tolerance for a polygon, optional."
-            },
-            "tolerance": {
-              "type": "number",
-              "description": "Tolerance value (optional). Can be a float or integer."
             }
           },
           "additionalProperties": false,
