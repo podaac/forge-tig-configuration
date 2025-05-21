@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "forge-tig-config-generator"
-version = "0.3.0a0"
+version = "0.3.0a1"
 authors = ["Simon Liu <simon.liu@jpl.nasa.gov>"]
 readme = "README.md"
 description = "Tool to generate podaac forge and tig configurations"
