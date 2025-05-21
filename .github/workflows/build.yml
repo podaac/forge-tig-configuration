@@ -16,6 +16,7 @@ jobs:
     permissions:
       contents: write
       packages: write
+      id-token: write     # IMPORTANT: this permission is mandatory for trusted publishing
     
     outputs:
       version: ${{ steps.versioning.outputs.new_version }}
@@ -71,7 +72,7 @@ jobs:
 
       - name: Install Dependencies and Run Tests
         run: |
-          poetry install --with dev
+          poetry install
           poetry run pylint podaac
           poetry run flake8 podaac
 
