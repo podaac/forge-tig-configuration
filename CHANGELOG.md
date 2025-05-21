@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0]
+
+### Added
+ - Added new strategy **`shapely_linestring`** to config generator schema
+### Changed
+ - Renamed project to forge-tig-config-generator in pypi.org
+### Deprecated
+### Removed
+### Fixed
+### Security
 
 ## [Released] - 2025-05-14
 
