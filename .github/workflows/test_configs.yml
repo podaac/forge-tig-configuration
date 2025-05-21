@@ -19,12 +19,12 @@ jobs:
       - name: Install Poetry
         uses: abatilo/actions-poetry@v3
         with:
-          poetry-version: 1.3.2
+          poetry-version: 2.1.3
 
       - name: Install Software
         run: |
           poetry build
-          poetry install --with dev
+          poetry install
 
       - name: Run Tests
         run: |
