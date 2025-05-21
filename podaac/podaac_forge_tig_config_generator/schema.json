@@ -84,7 +84,7 @@
         },
         "strategy": {
           "type": "string",
-          "enum": ["open_cv", "alpha_shape", "linestring", "periodic", "swot_linestring", "smap", "polarsides", "polar"],
+          "enum": ["open_cv", "alpha_shape", "shapely_linestring", "linestring", "periodic", "swot_linestring", "smap", "polarsides", "polar"],
           "description": "Footprint calculation strategy, required."
         },
         "open_cv": {
@@ -188,6 +188,22 @@
           },
           "additionalProperties": false,
           "description": "Parameters for the alpha shape strategy, optional."
+        },
+        "shapely_linestring": {
+          "type": "object",
+          "properties": {
+            "simplify": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Simplification tolerance for a polygon, optional."
+            },
+            "tolerance": {
+              "type": "number",
+              "description": "Tolerance value (optional). Can be a float or integer."
+            }
+          },
+          "additionalProperties": false,
+          "description": "Parameters for the Shapely Linestring strategy, optional."
         }
       },
       "additionalProperties": false,
