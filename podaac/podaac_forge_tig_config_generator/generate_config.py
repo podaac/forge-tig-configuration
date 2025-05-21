@@ -25,6 +25,7 @@ class HitideConfigGenerator:
         strategy: str = None,
         opencv_params: dict = None,
         alpha_shape_params: dict = None,
+        shapely_linestring_params: dict = None,
         img_variables: list = None,
         image: dict = None
     ):
@@ -81,6 +82,10 @@ class HitideConfigGenerator:
 
         if self.alpha_shape_params:
             footprint['alpha_shape'] = self.alpha_shape_params
+
+        if self.shapely_linestring_params:
+            footprint['shapely_linestring'] = self.shapely_linestring_params
+            
         config["footprint"] = footprint
 
         if self.img_variables:
