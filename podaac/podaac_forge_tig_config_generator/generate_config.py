@@ -41,6 +41,7 @@ class HitideConfigGenerator:
         self.strategy = strategy
         self.opencv_params = opencv_params
         self.alpha_shape_params = alpha_shape_params
+        self.shapely_linestring_params = shapely_linestring_params
         self.img_variables = img_variables
         self.image = image
 
@@ -85,7 +86,7 @@ class HitideConfigGenerator:
 
         if self.shapely_linestring_params:
             footprint['shapely_linestring'] = self.shapely_linestring_params
-            
+
         config["footprint"] = footprint
 
         if self.img_variables:
