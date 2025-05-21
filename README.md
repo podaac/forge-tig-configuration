@@ -18,7 +18,7 @@ pip install podaac-forge-tig-config-generator
 
 ### Creating a Configuration Generator Instance
 ```python
-from podaac.podaac_forge_tig_config_generator.generate_config import HitideConfigGenerator
+from podaac.forge_tig_config_generator.generate_config import HitideConfigGenerator
 import json
 
 config_generator = HitideConfigGenerator(
