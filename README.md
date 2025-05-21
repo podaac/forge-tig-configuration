@@ -95,7 +95,7 @@ The generated configuration includes:
   - `tiles` (dict): Grid tiling configuration.
   - `global_grid` (bool): Indicates if global grid is used.
   - `footprinter` (str): Footprint generation method.
-  - `tolerance` (float): Processing tolerance.
+  - `tolerance` (float): Processing tolerance, used for forge.
   - `footprint` (dict): Includes footprinting strategies (OpenCV, Alpha Shape, etc.).
   - `imgVariables` (list of dict): List of image-related variables.
   - `image` (dict): Image configuration, defaults to `{"ppd": 4, "res": 8}`.

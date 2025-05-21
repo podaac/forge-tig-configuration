@@ -6,6 +6,52 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [Released] - 2025-05-14
+
+### Changed
+ - Updated config file for SMAP_JPL_L2B_SSS_CAP_V5
+ - Updated config file for SMAP_JPL_L2B_NRT_SSS_CAP_V5
+
+
+## [Released] - 2025-03-31
+
+### Changed
+ - Changed some alpha shapes params for QUIKSCAT_ESDR_ANCILLARY_L2_V1.1 and QUIKSCAT_ESDR_L2_WIND_STRESS_V1.1 config files.
+
+
+## [Released] - 2025-03-25
+
+### Added
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_LR_SSH_BASIC_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_LR_SSH_EXPERT_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_LR_SSH_WINDWAVE_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_GDR_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_GDR_SGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_GDR_SSHA_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_IGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_IGDR_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_IGDR_SGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_IGDR_SSHA_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_OGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_OGDR_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_NALT_OGDR_SSHA_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_RAD_GDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_RAD_IGDR_D.cfg
+ - cfg file for forge-tig-configuration/config-files/SWOT_L2_RAD_OGDR_D.cfg
+
+## [Released] - 2025-03-24
+
+### Added
+ - cfg file for SCATSAT1_ESDR_ANCILLARY_L2_V1.1
+
+
+## [Released] - 2025-02-26
+
+### Added
+ - Converted SMAP_JPL_L2B_SSS_CAP_V5 to forge-py
+
+
 ## [0.1.0]
 
 ### Added
@@ -25,7 +71,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Released] - 2025-01-31
 
 - Converted AVHRRMTC_G-NAVO-L2P-v2.0 to forge-py
-
 
 ## [Released] - 2024-12-11
 
