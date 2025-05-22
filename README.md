@@ -1,10 +1,12 @@
 # HitideConfigGenerator
 
 ## Overview
-`HitideConfigGenerator` is a Python class designed to generate configuration objects adhering to a specified JSON schema. It allows users to specify key parameters for HiTIDE processing and validates the generated configuration against a schema before saving it as a JSON file. This config JSON, which serves as a small metadata side car file for the granules in a collection, is used by the [forge-py](https://github.com/podaac/forge-py) and [tig](https://github.com/podaac/tig) software to generate geographic coverage footprints and variable thumbnails for those granules.
+This package is used to create configuration JSON files which specify input parameters for the [forge](https://github.com/podaac/forge), [forge-py](https://github.com/podaac/forge-py) and [tig](https://github.com/podaac/tig) software - these software generate geographic coverage footprints and variable thumbnails for granules, which are utilized by user-facing services such as HiTIDE and Earthdata Search. The same config file is used as input to all 3 of these tools, with one file per collection.  The config generator's intention is to simplify the process of making these config files, as well as validate the config file format against a predefined schema..
+
+The config JSON serves as a small metadata side car file for the granules in a collection, with one config file generated per collection. This package both creates and validates the config file format against a predefined schema.
 
 ## Features
-- Generate structured configuration objects for HiTIDE processing.
+- Generate structured configuration objects for forge, forge-py, tig, and HiTIDE processing.
 - Supports optional parameters for customization.
 - Validates configuration against a predefined JSON schema.
 - Saves the configuration to a JSON file.
