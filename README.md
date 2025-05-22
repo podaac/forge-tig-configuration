@@ -1,7 +1,7 @@
 # HitideConfigGenerator
 
 ## Overview
-`HitideConfigGenerator` is a Python class designed to generate configuration objects adhering to a specified JSON schema. It allows users to specify key parameters for HiTIDE processing and validates the generated configuration against a schema before saving it as a JSON file.
+`HitideConfigGenerator` is a Python class designed to generate configuration objects adhering to a specified JSON schema. It allows users to specify key parameters for HiTIDE processing and validates the generated configuration against a schema before saving it as a JSON file. This config JSON, which serves as a small metadata side car file for the granules in a collection, is used by the [forge-py](https://github.com/podaac/forge-py) and [tig](https://github.com/podaac/tig) software to generate geographic coverage footprints and variable thumbnails for those granules.
 
 ## Features
 - Generate structured configuration objects for HiTIDE processing.
@@ -84,21 +84,19 @@ Generates a configuration object adhering to the specified schema.
 - **Raises**: `Exception` if validation fails.
 
 ## Configuration Schema
-The generated configuration includes:
-- **Required Fields**:
-  - `shortName` (str): Dataset short name.
-  - `latVar` (str): Latitude variable name.
-  - `lonVar` (str): Longitude variable name.
-  - `is360` (bool): Whether longitude is in 0-360 format.
-- **Optional Fields**:
-  - `timeVar` (str): Time variable name.
-  - `tiles` (dict): Grid tiling configuration.
-  - `global_grid` (bool): Indicates if global grid is used.
-  - `footprinter` (str): Footprint generation method.
-  - `tolerance` (float): Processing tolerance, used for forge.
-  - `footprint` (dict): Includes footprinting strategies (OpenCV, Alpha Shape, etc.).
-  - `imgVariables` (list of dict): List of image-related variables.
-  - `image` (dict): Image configuration, defaults to `{"ppd": 4, "res": 8}`.
+The arg names / values passed to `HitideConfigGenerator` become the keys / values in the dictionary and JSON. Because the main purpose of the JSON is to be used with forge-py and tig, the args relevant to each are split below. Detailed descriptions of these args are on the respective read-me pages (where the args are alternately refered to as "config parameters" or "fields"). Config files can be generated for use with either forge-py or tig separately, or both. It is only necessary to pass the args relevant to the software intended for use with the config file. 
+
+### args relevant to forge-py footprinter
+
+`shortName` (str, required), `latVar` (str, required), `lonVar` (str, required), `is360` (bool, required), `timeVar` (str, optional), `strategy` (str, optional), `open_cv` (dict, optional), `alpha_shape` (dict, optional), `shapely_linstring` (dict, optional).
+
+Detailed descriptions of the args can be found on the [forge-py readme](https://github.com/podaac/forge-py?tab=readme-ov-file#description-of-fields).
+
+### args relevant to tig image generation
+
+`shortName` (str, required), `latVar` (str, required), `lonVar` (str, required), `is360` (bool, required), `imgVariables` (list of dicts, required), `image` (dict, optional).
+
+Detailed descriptions of the args can be found on the [tig readme](https://github.com/podaac/tig?tab=readme-ov-file#description-of-fields).
 
 ## Example Output
 ```json
