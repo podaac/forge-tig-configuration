@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Released] - 2025-05-22
+### Changed
+ - Updated config file for JASON_CS_S6A_L2_ALT_HR_RED_OST_NRT_F, JASON_CS_S6A_L2_AMR_RAD_STC, JASON-1_L2_OST_GPN_E_GEODETIC.
+
 ## [0.2.0]
 
 ### Added
