@@ -23,7 +23,7 @@ jobs:
       changes: ${{ steps.check_changes.outputs.changes }}
       pyproject_name: ${{ steps.versioning.outputs.pyproject_name }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Needed for proper versioning
       
