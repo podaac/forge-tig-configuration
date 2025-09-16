@@ -23,18 +23,16 @@ jobs:
       changes: ${{ steps.check_changes.outputs.changes }}
       pyproject_name: ${{ steps.versioning.outputs.pyproject_name }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0  # Needed for proper versioning
       
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.10'
 
       - name: Install Poetry
-        uses: abatilo/actions-poetry@v3
+        uses: abatilo/actions-poetry@v4
         with:
           poetry-version: 2.1.3
 
