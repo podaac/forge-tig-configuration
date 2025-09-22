@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0]
+
+### Added
+### Changed
+ - update jsonschema version to match forge-py 4.17.3
+ - update github actions versions
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 ## [Released] - 2025-08-27
 ### Added
  - Config file for QUIKSCAT_ESDR_L2_WSDERIV_V1.0, 
