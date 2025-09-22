@@ -118,6 +118,7 @@ jobs:
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git tag -a "${VERSION}" -m "Version ${VERSION}"
           git push origin "${VERSION}" 2>/dev/null || true
+        continue-on-error: true
 
       - name: Publish to test.pypi.org
         id: pypi-test-publish
