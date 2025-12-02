@@ -196,6 +196,14 @@
               "type": "number",
               "minimum": 0,
               "description": "Simplification tolerance for a polygon, optional."
+            },
+            "max_dist": {
+              "type": "number",
+              "description": "Maximum distance between points for a line string before starting a new line, optional"
+            },
+            "fill_value": {
+              "type": "number",
+              "description": "Fill value for invalid areas, optional."
             }
           },
           "additionalProperties": false,
