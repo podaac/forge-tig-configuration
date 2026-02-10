@@ -9,8 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
- - update json schema for linestring addition in forge-py 0.7.0
- - update github actions versions
+ - Added new 'max_dist' parameter to collection JASON_CS_S6A_L2_AMR_RAD_NRT
+ - Updated json schema for linestring addition in forge-py 0.7.0
+ - Updated github actions versions
+ - Updated Python to 3.12
+ - Updated dependency versions
 ### Deprecated
 ### Removed
 ### Fixed
