@@ -9,6 +9,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 ### Changed
+### Deprecated
+### Removed
+### Fixed
+
+
+## [0.3.0]
+
+### Added
+ - Added config for MERGED_TP_J1_OSTM_OST_CYCLES_V60
+### Changed
+ - update jsonschema version to match forge-py, jsonschema new version is 4.17.3
+ - update github actions versions
+ - Added new 'max_dist' parameter to config JASON_CS_S6A_L2_AMR_RAD_NRT
+ - Updated json schema for linestring addition in forge-py 0.7.0
+ - Updated github actions versions
+ - Updated Python to 3.12
+ - Updated dependency versions
+### Deprecated
+### Removed
+### Fixed
+
+## [Released] - 2025-08-27
+### Added
+ - Config file for QUIKSCAT_ESDR_L2_WSDERIV_V1.0, 
+
+## [Released] - 2025-06-16
+### Added
+ - Config files for ASCATA_ESDR_L2_WSDERIV_V1.0, SCATSAT1_ESDR_L2_WSDERIV_V1.0.
+
+## [Released] - 2025-05-23
+### Added
+ - Config file for ASCATB_ESDR_L2_WSDERIV_V1.0.
+
+## [Released] - 2025-05-22
+### Changed
+ - Updated config file for JASON_CS_S6A_L2_ALT_HR_RED_OST_NRT_F, JASON_CS_S6A_L2_AMR_RAD_STC, JASON-1_L2_OST_GPN_E_GEODETIC.
+
+
+## [Unreleased]
+### Added
+### Changed
  - update jsonschema version to match forge-py, jsonschema new version is 4.17.3
  - update github actions versions
  - Added new 'max_dist' parameter to config JASON_CS_S6A_L2_AMR_RAD_NRT

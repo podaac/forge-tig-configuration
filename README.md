@@ -84,11 +84,11 @@ Generates a configuration object adhering to the specified schema.
 - **Raises**: `Exception` if validation fails.
 
 ## Configuration Schema
-The arg names / values passed to `HitideConfigGenerator` become the keys / values in the dictionary and JSON. Because the main purpose of the JSON is to be used with forge-py and tig, the args relevant to each are split below. Detailed descriptions of these args are on the respective read-me pages (where the args are alternately refered to as "config parameters" or "fields"). Config files can be generated for use with either forge-py or tig separately, or both. It is only necessary to pass the args relevant to the software intended for use with the config file. 
+The arg names / values passed to `HitideConfigGenerator` become the keys / values in the dictionary and JSON. Because the main purpose of the JSON is to be used with forge-py and tig, the args relevant to each are split below. Detailed descriptions of these args are on the respective read-me pages (where the args are alternately referred to as "config parameters" or "fields"). Config files can be generated for use with either forge-py or tig separately, or both. It is only necessary to pass the args relevant to the software intended for use with the config file. 
 
 ### args relevant to forge-py footprinter
 
-`shortName` (str, required), `latVar` (str, required), `lonVar` (str, required), `is360` (bool, required), `timeVar` (str, optional), `strategy` (str, optional), `open_cv` (dict, optional), `alpha_shape` (dict, optional), `shapely_linstring` (dict, optional).
+`shortName` (str, required), `latVar` (str, required), `lonVar` (str, required), `is360` (bool, required), `timeVar` (str, optional), `strategy` (str, optional), `open_cv` (dict, optional), `alpha_shape` (dict, optional), `shapely_linestring` (dict, optional).
 
 Detailed descriptions of the args can be found on the [forge-py readme](https://github.com/podaac/forge-py?tab=readme-ov-file#description-of-fields).
 
