@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "forge-tig-config-generator"
-version = "0.2.0"
+version = "0.3.0rc3"
 authors = ["Simon Liu <simon.liu@jpl.nasa.gov>"]
 readme = "README.md"
 description = "Tool to generate podaac forge and tig configurations"
@@ -10,9 +10,9 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.10"
-jsonschema = "^4.23.0"
-pandas = "^2.2.3"
+python = "^3.12"
+jsonschema = "4.17.3"
+pandas = "^3.0.0"
 openpyxl = "^3.1.5"
 click = "^8.1"
 
@@ -20,8 +20,8 @@ click = "^8.1"
 optional = false
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.3.3"
-pylint = "^3.0.0"
+pytest = "^9.0.2"
+pylint = "^4.0.0"
 flake8 = "^7.0.0"
  
 [build-system]

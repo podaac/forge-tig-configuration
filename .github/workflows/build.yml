@@ -23,18 +23,16 @@ jobs:
       changes: ${{ steps.check_changes.outputs.changes }}
       pyproject_name: ${{ steps.versioning.outputs.pyproject_name }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0  # Needed for proper versioning
       
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: '3.10'
+          python-version: '3.12'
 
       - name: Install Poetry
-        uses: abatilo/actions-poetry@v3
+        uses: abatilo/actions-poetry@v4
         with:
           poetry-version: 2.1.3
 
@@ -119,7 +117,8 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git tag -a "${VERSION}" -m "Version ${VERSION}"
-          git push origin "${VERSION}"
+          git push origin "${VERSION}" 2>/dev/null || true
+        continue-on-error: true
 
       - name: Publish to test.pypi.org
         id: pypi-test-publish
@@ -131,12 +130,14 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           repository-url: https://test.pypi.org/legacy/
+        continue-on-error: true
 
       - name: Publish to pypi.org
         if: |
           github.ref == 'refs/heads/main'
         id: pypi-publish
         uses: pypa/gh-action-pypi-publish@release/v1
+        continue-on-error: true
 
       - name: Wait for package
         if: |
