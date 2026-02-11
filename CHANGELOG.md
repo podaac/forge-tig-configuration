@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 ### Changed
+### Deprecated
+### Removed
+### Fixed
+
+
+## [0.3.0]
+
+### Added
+### Changed
  - update jsonschema version to match forge-py, jsonschema new version is 4.17.3
  - update github actions versions
  - Added new 'max_dist' parameter to config JASON_CS_S6A_L2_AMR_RAD_NRT
