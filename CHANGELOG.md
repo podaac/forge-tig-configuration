@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.3.0]
 
 ### Added
+ - Added config for MERGED_TP_J1_OSTM_OST_CYCLES_V60
 ### Changed
  - update jsonschema version to match forge-py, jsonschema new version is 4.17.3
  - update github actions versions
@@ -28,7 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
-
 
 ## [Released] - 2025-08-27
 ### Added
