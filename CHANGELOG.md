@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.3.0]
 
 ### Added
+ - Added config for SWOT_L2_NALT_OGDR_NRTGPS_D
+
+### Added
  - Added config for MERGED_TP_J1_OSTM_OST_CYCLES_V61, NASA_SSH_REF_ALONGTRACK_V11
 
 ### Added
