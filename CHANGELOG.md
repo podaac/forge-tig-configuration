@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.0]
 
+### Changed
+ - Added config for SWOT_L2_NALT_OGDR_NRTGPS_D to use forge-py
+
 ### Added
  - Added config for SWOT_L2_NALT_OGDR_NRTGPS_D
 
