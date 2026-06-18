@@ -13,7 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 
-
+## [Released] - 2026-06-18
+### Added
+ - Config file for COWVR_STPH8_L2_EDR_V11, 
+ 
 ## [0.3.0]
 
 ### Changed
