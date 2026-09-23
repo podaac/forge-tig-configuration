@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 ### Added
+- Added configs for SWOT geometry fix, with names suffixed by "_dateline", including sub-collections
+
+### Added
  - Added config for SWOT_L2_HR_Raster_D to use forge-py, for the SWOT geometry fix
 
 ## [Released] - 2026-06-18
