@@ -25,3 +25,14 @@ def test_json_schema(config_file):
         validate_config(config_file)
     except (json.JSONDecodeError, ValidationError) as e:
         pytest.fail(f"Validation failed for {config_file}: {e}")
+
+
+@pytest.mark.parametrize("config_file", [
+    os.path.join('swot-configs', f) for f in os.listdir('swot-configs') if f.endswith('.cfg')
+])
+def test_swot_configs(config_file):
+    """Validate SWOT configurations against schema."""
+    try:
+        validate_config(config_file)
+    except (json.JSONDecodeError, ValidationError) as e:
+        pytest.fail(f"Validation failed for {config_file}: {e}")
