@@ -92,6 +92,22 @@ The arg names / values passed to `HitideConfigGenerator` become the keys / value
 
 Detailed descriptions of the args can be found on the [forge-py readme](https://github.com/podaac/forge-py?tab=readme-ov-file#description-of-fields).
 
+#### `shapely_linestring` strategy
+
+Set `strategy` to `"shapely_linestring"` to use the Shapely LineString footprint strategy. Its optional parameters are `simplify` (polygon simplification tolerance), `max_dist` (maximum distance between points before a new line is started), and `fill_value` (fill value for invalid areas). For example, pass `shapely_linestring_params={"simplify": 0.05}` to `HitideConfigGenerator`:
+
+```python
+config_generator = HitideConfigGenerator(
+    short_name="example_dataset",
+    lat_var="latitude",
+    lon_var="longitude",
+    is360=True,
+    footprinter="forge-py",
+    strategy="shapely_linestring",
+    shapely_linestring_params={"simplify": 0.05}
+)
+```
+
 ### args relevant to tig image generation
 
 `shortName` (str, required), `latVar` (str, required), `lonVar` (str, required), `is360` (bool, required), `imgVariables` (list of dicts, required), `image` (dict, optional).
