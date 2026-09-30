@@ -8,13 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added SWOT backfill configuration files for the HR raster and LR SSH datasets ([forge-tig-configuration#125](https://github.com/podaac/forge-tig-configuration/issues/125)).
+- Added schema validation coverage for the SWOT configuration files.
 ### Changed
+- Updated the README with documentation for the `shapely_linestring` strategy and its parameters.
+- Updated deployment workflows to publish backfill dataset configurations and SWOT configurations ([tva-meta#79](https://github.com/podaac/tva-meta/issues/79)).
 ### Deprecated
 ### Removed
 ### Fixed
-
-### Added
- - Added config for SWOT_L2_HR_Raster_D to use forge-py, for the SWOT geometry fix
+- Updated backfill synchronization to avoid skipping changed configuration files when file sizes are unchanged
+- Added config for SWOT_L2_HR_Raster_D to use forge-py, for the SWOT geometry fix.
 
 ## [Released] - 2026-06-18
 ### Added
