@@ -12,7 +12,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added schema validation coverage for the SWOT configuration files.
 ### Changed
 - Updated the README with documentation for the `shapely_linestring` strategy and its parameters.
-- Updated deployment workflows to publish backfill dataset configurations and SWOT configurations ([tva-meta#79](https://github.com/podaac/tva-meta/issues/79)).
 ### Deprecated
 ### Removed
 ### Fixed
