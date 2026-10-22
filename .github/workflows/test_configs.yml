@@ -27,6 +27,9 @@ jobs:
           poetry install
 
       - name: Run Tests
+        env:
+          CMR_USER: ${{ secrets.CMR_USER }}
+          CMR_PASS: ${{ secrets.CMR_PASS }}
         run: |
           poetry run flake8 podaac
           poetry run pylint podaac
