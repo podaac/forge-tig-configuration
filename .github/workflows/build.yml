@@ -70,6 +70,7 @@ jobs:
 
       - name: Install Dependencies and Run Tests
         run: |
+          poetry env use "$(which python)"
           poetry install
           poetry run pylint podaac
           poetry run flake8 podaac
